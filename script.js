@@ -73,7 +73,8 @@ projectButtons.forEach((button) => {
     button.setAttribute("aria-selected", "true");
 
     projectCards.forEach((card) => {
-      const show = filter === "all" || card.dataset.type === filter;
+      const tags = (card.dataset.tags || "").split(/\s+/).filter(Boolean);
+      const show = filter === "all" || tags.includes(filter);
       card.style.display = show ? "block" : "none";
     });
   });

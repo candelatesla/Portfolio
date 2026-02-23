@@ -16,7 +16,7 @@
     />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicon.svg" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260223-5" />
   </head>
   <body>
     <div id="top" aria-hidden="true"></div>
@@ -244,59 +244,59 @@
         
         <div class="chip-row" role="tablist" aria-label="Project filters">
           <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-filter="ai" role="tab" aria-selected="false">AI</button>
           <button class="chip" data-filter="data" role="tab" aria-selected="false">Data</button>
           <button class="chip" data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
+          <button class="chip" data-filter="ai" role="tab" aria-selected="false">AI</button>
         </div>
 
         <div class="cards three-col" id="project-grid">
-          <article class="card project-card" data-type="fullstack">
+          <article class="card project-card" data-tags="data">
             <h3>AetherMart - Unified Data & AI Platform</h3>
             <p>
               Scalable hybrid e-commerce platform with AI-powered recommendation systems, modular services, and
               production-oriented architecture for modern e-commerce operations.
             </p>
-            <a href="https://github.com/candelatesla/AetherMart" target="_blank" rel="noreferrer">View Repo</a>
+            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/AetherMart" target="_blank" rel="noreferrer">View Code</a>
           </article>
-          <article class="card project-card" data-type="fullstack">
+          <article class="card project-card" data-tags="data fullstack ai">
             <h3>CMIS Engagement Platform</h3>
             <p>
               Full-featured engagement platform for CMIS at Texas A&amp;M with AI-based
               student-mentor matching, event management, and automated operational workflows.
             </p>
-            <a href="https://github.com/candelatesla/CMIS" target="_blank" rel="noreferrer">View Repo</a>
+            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/CMIS" target="_blank" rel="noreferrer">View Code</a>
           </article>
-          <article class="card project-card" data-type="ai">
-            <h3>AI-Agent-Lab</h3>
-            <p>
-              Collection of production-style agentic AI experiments using LangGraph, LangChain, and
-              CrewAI for orchestration, tool use, and multi-agent execution patterns.
-            </p>
-            <a href="https://github.com/candelatesla/AI-Agent-Lab" target="_blank" rel="noreferrer">View Repo</a>
-          </article>
-          <article class="card project-card" data-type="fullstack">
-            <h3>Virtual Science Practical Simulator</h3>
-            <p>
-              Dynamic educational simulation platform developed for C-DAC, combining interactive visual
-              modules, guided practicals, and structured assessments at scale.
-            </p>
-            <a href="https://github.com/candelatesla/CDAC" target="_blank" rel="noreferrer">View Repo</a>
-          </article>
-          <article class="card project-card" data-type="data">
+          <article class="card project-card" data-tags="data">
             <h3>Data-Analyzer</h3>
             <p>
               Python and Streamlit-based analytics tool for automated streamlined data cleaning, exploratory
               analysis, and visualization to accelerate insight generation.
             </p>
-            <a href="https://github.com/candelatesla/DataAnalyzer" target="_blank" rel="noreferrer">View Repo</a>
+            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/DataAnalyzer" target="_blank" rel="noreferrer">View Code</a>
           </article>
-          <article class="card project-card" data-type="fullstack">
+          <article class="card project-card" data-tags="data">
             <h3>Airline-Management-System</h3>
             <p>
               Comprehensive airline operations desktop application handling scheduling, booking, and
               passenger management with structured workflow control.
             </p>
-            <a href="https://github.com/candelatesla/AirlineManagementSystem" target="_blank" rel="noreferrer">View Repo</a>
+            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/AirlineManagementSystem" target="_blank" rel="noreferrer">View Code</a>
+          </article>
+          <article class="card project-card" data-tags="fullstack">
+            <h3>Virtual Science Practical Simulator</h3>
+            <p>
+              Dynamic educational simulation platform developed for C-DAC, combining interactive visual
+              modules, guided practicals, and structured assessments at scale.
+            </p>
+            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/CDAC" target="_blank" rel="noreferrer">View Code</a>
+          </article>
+          <article class="card project-card" data-tags="ai">
+            <h3>AI-Agent-Lab</h3>
+            <p>
+              Collection of production-style agentic AI experiments using LangGraph, LangChain, and
+              CrewAI for orchestration, tool use, and multi-agent execution patterns.
+            </p>
+            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/AI-Agent-Lab" target="_blank" rel="noreferrer">View Code</a>
           </article>
         </div>
       </section>
@@ -306,33 +306,52 @@
           <h2>Research</h2>
           <span class="section-rule"></span>
         </div>
-        <div class="cards two-col">
-          <article class="card">
-            <h3>Interpretable Machine Learning in Healthcare – An XAI Approach for Diabetes Prediction</h3>
-            <p class="muted">Presented at ICMAAI-25 • June 2025</p>
-            <p>
-              Explored XAI methods for diabetes prediction to improve model transparency and trust in
-              healthcare decision support.
-            </p>
-            <p><a href="https://www.linkedin.com/in/yashdoshi8/details/projects/1750089808670/single-media-viewer/?profileId=ACoAADk1mBsBaP3tyjNDk63VVJSVnG2LiEUh8qM" target="_blank" rel="noreferrer">Paper Link</a></p>
+        <div class="research-list">
+          <article class="research-item">
+            <div class="research-meta">
+              <h3>Interpretable Machine Learning in Healthcare – An XAI Approach for Diabetes Prediction</h3>
+              <p class="muted">Presented at ICMAAI-25 • June 2025</p>
+              <p>
+                Explored XAI methods for diabetes prediction to improve model transparency and trust in
+                healthcare decision support.
+              </p>
+            </div>
+            <a
+              class="btn research-link-btn"
+              href="https://www.linkedin.com/in/yashdoshi8/details/projects/1750089808670/single-media-viewer/?profileId=ACoAADk1mBsBaP3tyjNDk63VVJSVnG2LiEUh8qM"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Link
+            </a>
           </article>
-          <article class="card">
-            <h3>Revolutionizing Anxiety Treatment: The Role of Augmented Reality in Exposure Therapy</h3>
-            <p class="muted">Published in IEEE Xplore • April 2025</p>
-            <p>
-              Integrated augmented reality into exposure therapy to improve patient engagement,
-              personalization, and treatment outcomes.
-            </p>
-            <p><a href="https://ieeexplore.ieee.org/document/10960229" target="_blank" rel="noreferrer">Paper Link</a></p>
+
+          <article class="research-item">
+            <div class="research-meta">
+              <h3>Revolutionizing Anxiety Treatment: The Role of Augmented Reality in Exposure Therapy</h3>
+              <p class="muted">Published in IEEE Xplore • April 2025</p>
+              <p>
+                Integrated augmented reality into exposure therapy to improve patient engagement,
+                personalization, and treatment outcomes.
+              </p>
+            </div>
+            <a class="btn research-link-btn" href="https://ieeexplore.ieee.org/document/10960229" target="_blank" rel="noreferrer">
+              Link
+            </a>
           </article>
-          <article class="card">
-            <h3>Comparison of YOLO Models Object Detection from Parking Spot Images</h3>
-            <p class="muted">Scopus-indexed journal publication • April 2024</p>
-            <p>
-              Benchmarked YOLO variants across precision, recall, runtime, and usability for practical
-              object detection deployment.
-            </p>
-            <p><a href="https://kuey.net/index.php/kuey/article/view/7025" target="_blank" rel="noreferrer">Paper Link</a></p>
+
+          <article class="research-item">
+            <div class="research-meta">
+              <h3>Comparison of YOLO Models Object Detection from Parking Spot Images</h3>
+              <p class="muted">Scopus-indexed journal publication • April 2024</p>
+              <p>
+                Benchmarked YOLO variants across precision, recall, runtime, and usability for practical
+                object detection deployment.
+              </p>
+            </div>
+            <a class="btn research-link-btn" href="https://kuey.net/index.php/kuey/article/view/7025" target="_blank" rel="noreferrer">
+              Link
+            </a>
           </article>
         </div>
       </section>
@@ -560,6 +579,6 @@
       <a href="#top">Back to top</a>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./script.js?v=20260223-5"></script>
   </body>
 </html>
