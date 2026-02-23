@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Yash Doshi - Graduate student and engineer specializing in AI, data systems, and software development."
+      content="Yash Doshi - Graduate student and Engineer specializing in AI, Data Systems, and Software Development."
     />
     <title>Yash Doshi | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,35 +14,44 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div id="top" aria-hidden="true"></div>
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
 
-    <header class="site-header" id="top">
+    <header class="site-header">
       <a class="brand" href="#top">YD</a>
       <nav class="nav" aria-label="Primary">
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
-        <a href="#leadership">Leadership</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
         <a href="#research">Research</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#skills">Skills</a>
         <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn btn-outline" href="mailto:yash.doshi@tamu.edu">Mail</a>
+      <a class="btn btn-outline icon-btn" href="mailto:yash.doshi@tamu.edu" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z"
+          />
+        </svg>
+      </a>
       <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     </header>
 
     <main>
       <section class="hero reveal" id="hero">
-        <p class="eyebrow">Graduate Student • Engineer • Builder</p>
+        <p class="eyebrow">ENGINEER • BUILDER • DATA × AI</p>
         <h1>Yash Chetan Doshi</h1>
         <p class="hero-copy">
-          Graduate student engineer building data-intensive and AI-enabled products end to end, from clean
-          user experiences to reliable backend systems and analytics workflows.
+          I build data-intensive and AI-enabled products end to end — from clean user experiences to reliable backend systems and analytics workflows.
+          
         </p>
         <p class="availability">
           Open to Summer 2026 internship roles in Data, AI, and Full-Stack Engineering.
@@ -52,9 +61,41 @@
           <a class="btn btn-outline" href="#contact">Let's Connect</a>
         </div>
         <div class="social-row">
-          <a href="https://github.com/candelatesla" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/yashdoshi8/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:yash.doshi@tamu.edu">Email</a>
+          <a
+            class="icon-link"
+            href="https://github.com/candelatesla"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.29 7.76 10.8.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.16.69-3.83-1.52-3.83-1.52-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.25 1.16-3.04-.12-.28-.5-1.45.11-3.01 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.56.23 2.73.11 3.01.72.79 1.16 1.8 1.16 3.04 0 4.37-2.66 5.33-5.2 5.61.41.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .31.2.67.79.56a11.26 11.26 0 0 0 7.75-10.8C23.25 5.48 18.27.5 12 .5Z"
+              />
+            </svg>
+          </a>
+          <a
+            class="icon-link"
+            href="https://www.linkedin.com/in/yashdoshi8/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.75h4.46v11.5H2.75V9.75Zm7.01 0h4.27v1.57h.06c.59-1.12 2.05-2.3 4.22-2.3 4.52 0 5.35 2.98 5.35 6.86v7.37h-4.45v-6.53c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.52 1.7-2.52 3.45v6.64H9.76V9.75Z"
+              />
+            </svg>
+          </a>
+          <a class="icon-link" href="mailto:yash.doshi@tamu.edu" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z"
+              />
+            </svg>
+          </a>
           <a href="./assets/Yash_Doshi_Resume.pdf" download>Resume</a>
           <!-- <a href="https://leetcode.com/u/yashdoshi2003/">Leetcode</a> -->
         </div>
@@ -196,78 +237,6 @@
         </div>
       </section>
 
-      <section class="section reveal" id="leadership">
-        <div class="section-head">
-          <h2>Leadership</h2>
-          <span class="section-rule"></span>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
-                <img
-                  class="org-logo"
-                  src="https://logo.clearbit.com/tamu.edu"
-                  alt="BITS TAMU logo"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  onerror="this.classList.add('is-hidden')"
-                />
-                <span class="org-fallback" aria-hidden="true">BT</span>
-              </span> -->
-              <h3>Event Coordinator • Business Information Technology Students Club (BITS TAMU)</h3>
-            </div>
-            <p class="muted">Texas A&amp;M University • College Station, TX</p>
-            <ul>
-              <li>Coordinate club events and networking initiatives focused on business-technology students.</li>
-              <li>Drive event planning and execution for stronger student engagement and industry interaction.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
-                <img
-                  class="org-logo"
-                  src="https://logo.clearbit.com/csiindia.org"
-                  alt="Computer Society of India logo"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  onerror="this.classList.add('is-hidden')"
-                />
-                <span class="org-fallback" aria-hidden="true">CS</span>
-              </span> -->
-              <h3>Mentor &amp; Marketing Head • Computer Society of India (CSI)</h3>
-            </div>
-            <p class="muted">Aug 2023 - May 2025 • Mumbai, India</p>
-            <ul>
-              <li>Led an 80+ member team delivering hackathons, workshops, and large-scale tech events.</li>
-              <li>Managed marketing strategy, sponsorships, and partnerships to scale visibility and funding.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
-                <img
-                  class="org-logo"
-                  src="https://logo.clearbit.com/djsce.ac.in"
-                  alt="DJ Sanghvi College of Engineering logo"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  onerror="this.classList.add('is-hidden')"
-                />
-                <span class="org-fallback" aria-hidden="true">DJ</span>
-              </span> -->
-              <h3>Placement and Internship Coordinator • DJ Sanghvi College of Engineering</h3>
-            </div>
-            <p class="muted">Sep 2023 - May 2025 • Mumbai, India</p>
-            <ul>
-              <li>Worked with the placement office and recruiters to streamline internship/job pipelines.</li>
-              <li>Guided 600+ students through resume reviews, mock interviews, and placement-prep sessions.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
       <section class="section reveal" id="projects">
         <div class="section-head">
           <h2>Projects</h2>
@@ -333,50 +302,6 @@
         </div>
       </section>
 
-      <section class="section reveal" id="skills">
-        <div class="section-head">
-          <h2>Skills</h2>
-          <span class="section-rule"></span>
-        </div>
-        <div class="skills-grid">
-          <article class="card skill-card">
-            <h3>Languages</h3>
-            <div class="skill-tags">
-              <span>Python</span><span>R</span><span>SQL</span><span>JavaScript</span><span>TypeScript</span>
-              <span>Java</span><span>C</span><span>HTML/CSS</span>
-            </div>
-          </article>
-          <article class="card skill-card">
-            <h3>Software</h3>
-            <div class="skill-tags">
-              <span>React</span><span>Node.js</span><span>REST APIs</span><span>Git</span>
-              <span>JIRA</span><span>AWS</span><span>Google Cloud</span><span>MLOps</span>
-            </div>
-          </article>
-          <article class="card skill-card">
-            <h3>Data</h3>
-            <div class="skill-tags">
-              <span>Pandas</span><span>NumPy</span><span>Tableau</span><span>Power BI</span>
-              <span>MySQL</span><span>MariaDB</span><span>MongoDB</span><span>Hadoop</span>
-            </div>
-          </article>
-          <article class="card skill-card">
-            <h3>AI/ML</h3>
-            <div class="skill-tags">
-              <span>LLMs</span><span>Agentic AI</span><span>RAG</span><span>LangGraph</span>
-              <span>LangChain</span><span>CrewAI</span><span>XAI</span><span>YOLO</span>
-              <span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>Recommendation Systems</span>
-            </div>
-          </article>
-          <article class="card skill-card">
-            <h3>Certifications</h3>
-            <div class="skill-tags">
-              <span>AWS Certified AI Practitioner</span><span>Google Cloud Practitioner</span><span>n8n</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section class="section reveal" id="research">
         <div class="section-head">
           <h2>Research</h2>
@@ -413,7 +338,91 @@
         </div>
       </section>
 
-            <section class="section reveal" id="awards">
+      <section class="section reveal" id="leadership">
+        <div class="section-head">
+          <h2>Leadership</h2>
+          <span class="section-rule"></span>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-head">
+              <h3>Event Coordinator • Business Information Technology Students Club (BITS TAMU)</h3>
+            </div>
+            <p class="muted">Texas A&amp;M University • College Station, TX</p>
+            <ul>
+              <li>Coordinate club events and networking initiatives focused on business-technology students.</li>
+              <li>Drive event planning and execution for stronger student engagement and industry interaction.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-head">
+              <h3>Mentor &amp; Marketing Head • Computer Society of India (CSI)</h3>
+            </div>
+            <p class="muted">Aug 2023 - May 2025 • Mumbai, India</p>
+            <ul>
+              <li>Led an 80+ member team delivering hackathons, workshops, and large-scale tech events.</li>
+              <li>Managed marketing strategy, sponsorships, and partnerships to scale visibility and funding.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-head">
+              <h3>Placement and Internship Coordinator • DJ Sanghvi College of Engineering</h3>
+            </div>
+            <p class="muted">Sep 2023 - May 2025 • Mumbai, India</p>
+            <ul>
+              <li>Worked with the placement office and recruiters to streamline internship/job pipelines.</li>
+              <li>Guided 600+ students through resume reviews, mock interviews, and placement-prep sessions.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="skills">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <span class="section-rule"></span>
+        </div>
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <h3>Languages</h3>
+            <div class="skill-tags">
+              <span>Python</span><span>R</span><span>SQL</span><span>JavaScript</span><span>TypeScript</span>
+              <span>Java</span><span>C</span><span>HTML/CSS</span>
+            </div>
+          </article>
+          <article class="card skill-card">
+            <h3>Software</h3>
+            <div class="skill-tags">
+              <span>React</span><span>Node.js</span><span>REST APIs</span><span>Git</span>
+              <span>JIRA</span><span>AWS</span><span>Google Cloud</span><span>MLOps</span>
+            </div>
+          </article>
+          <article class="card skill-card">
+            <h3>Data</h3>
+            <div class="skill-tags">
+              <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Tableau</span><span>Power BI</span>
+              <span>MySQL</span><span>MariaDB</span><span>MongoDB</span><span>Hadoop</span>
+              <span>PostgreSQL</span><span>NoSQL</span><span>Vector Databases</span>
+            </div>
+          </article>
+          <article class="card skill-card">
+            <h3>AI/ML</h3>
+            <div class="skill-tags">
+              <span>LLMs</span><span>Agentic AI</span><span>RAG</span><span>LangGraph</span>
+              <span>LangChain</span><span>CrewAI</span><span>XAI</span><span>YOLO</span>
+              <span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>Recommendation Systems</span>
+            </div>
+          </article>
+          <article class="card skill-card">
+            <h3>Certifications</h3>
+            <div class="skill-tags">
+              <span>AWS Certified AI Practitioner</span><span>Google Cloud Practitioner</span><span>n8n</span><span>AI for Project Managers</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="awards">
         <div class="section-head">
           <h2>Awards</h2>
           <span class="section-rule"></span>
@@ -453,15 +462,73 @@
               Open to Summer 2026 internships, research collaborations, and engineering roles in AI,
               data, and full-stack software.
             </p>
-            <ul class="contact-list">
-              <li><strong>Email:</strong> <a href="mailto:yash.doshi@tamu.edu">yash.doshi@tamu.edu</a></li>
-              <li><strong>Phone:</strong> <a href="tel:+19795749820">+1 (979) 574-9820</a></li>
-              <li>
-                <strong>Profiles:</strong>
-                <a href="https://github.com/candelatesla" target="_blank" rel="noreferrer">GitHub</a> /
-                <a href="https://www.linkedin.com/in/yashdoshi8/" target="_blank" rel="noreferrer">LinkedIn</a>
-              </li>
-            </ul>
+            <div class="contact-items" aria-label="Contact methods">
+              <a class="contact-item" href="mailto:yash.doshi@tamu.edu" aria-label="Email Yash Doshi">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">Email</span>
+
+                </span>
+              </a>
+
+              <a class="contact-item" href="tel:+19795749820" aria-label="Call Yash Doshi">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M6.62 3.2a1.5 1.5 0 0 1 1.66-.37l2.2.88c.58.23.93.84.84 1.46l-.35 2.28a1.5 1.5 0 0 1-.62 1c-.44.31-.93.54-1.25.66a13.3 13.3 0 0 0 5.78 5.78c.12-.32.35-.81.66-1.25.25-.37.61-.58 1-.62l2.28-.35c.62-.09 1.23.26 1.46.84l.88 2.2c.24.59.1 1.27-.37 1.66l-1.84 1.53c-.51.42-1.2.59-1.85.45-2.15-.46-5.45-1.8-8.74-5.1-3.3-3.29-4.64-6.59-5.1-8.74a2.1 2.1 0 0 1 .45-1.85L6.62 3.2Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-label">Phone</span>
+                  <span class="contact-item-value">+1 (979) 574-9820</span>
+                </span>
+              </a>
+
+              <a
+                class="contact-item"
+                href="https://github.com/candelatesla"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open GitHub profile"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.29 7.76 10.8.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.16.69-3.83-1.52-3.83-1.52-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.25 1.16-3.04-.12-.28-.5-1.45.11-3.01 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.56.23 2.73.11 3.01.72.79 1.16 1.8 1.16 3.04 0 4.37-2.66 5.33-5.2 5.61.41.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .31.2.67.79.56a11.26 11.26 0 0 0 7.75-10.8C23.25 5.48 18.27.5 12 .5Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">GitHub</span>
+                </span>
+              </a>
+
+              <a
+                class="contact-item"
+                href="https://www.linkedin.com/in/yashdoshi8/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open LinkedIn profile"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.75h4.46v11.5H2.75V9.75Zm7.01 0h4.27v1.57h.06c.59-1.12 2.05-2.3 4.22-2.3 4.52 0 5.35 2.98 5.35 6.86v7.37h-4.45v-6.53c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.52 1.7-2.52 3.45v6.64H9.76V9.75Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">LinkedIn</span>
+                </span>
+              </a>
+            </div>
           </article>
 
           <form class="card contact-form" id="contact-form" novalidate>
@@ -483,9 +550,6 @@
               <textarea name="message" rows="5" required></textarea>
             </label>
             <button class="btn btn-primary" type="submit">Submit Form</button>
-            <p class="form-note">
-              This form sends directly to <code>yash.doshi@tamu.edu</code> via FormSubmit.
-            </p>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>

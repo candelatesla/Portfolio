@@ -35,7 +35,7 @@ const sectionObserver = new IntersectionObserver(
   },
   { threshold: 0.55 }
 );
-["education", "experience", "leadership", "projects", "skills", "research", "contact", "awards"].forEach((id) => {
+["education", "experience", "projects", "research", "leadership", "skills", "awards", "contact"].forEach((id) => {
   const el = document.getElementById(id);
   if (el) sectionObserver.observe(el);
 });
@@ -50,6 +50,13 @@ navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("open");
     menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 
