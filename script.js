@@ -5,8 +5,29 @@ const projectButtons = document.querySelectorAll(".chip");
 const projectCards = document.querySelectorAll(".project-card");
 const menuBtn = document.querySelector(".menu-btn");
 const nav = document.querySelector(".nav");
+const themeToggleBtn = document.querySelector("#theme-toggle");
 const form = document.querySelector("#contact-form");
 const statusEl = document.querySelector("#form-status");
+
+const THEME_KEY = "portfolio-theme";
+const setTheme = (theme) => {
+  document.body.setAttribute("data-theme", theme);
+  if (themeToggleBtn) {
+    themeToggleBtn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
+};
+
+const savedTheme = localStorage.getItem(THEME_KEY);
+setTheme(savedTheme === "light" ? "light" : "dark");
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    const currentTheme = document.body.getAttribute("data-theme") === "light" ? "light" : "dark";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+  });
+}
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 
