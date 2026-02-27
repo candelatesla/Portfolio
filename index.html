@@ -16,7 +16,7 @@
     />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20260223-10" />
+    <link rel="stylesheet" href="./styles.css?v=20260223-15" />
   </head>
   <body>
     <div id="top" aria-hidden="true"></div>
@@ -190,48 +190,6 @@
               <li>Built a virtual science practical simulator using ReactJS, FlareJS, and Rive animations.</li>
               <li>Designed onboarding, lab modules, and integrated quizzes to improve learning outcomes.</li>
               <li>Deployed on Vidyakash, supporting an audience of over 2 million high school students.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
-                <img
-                  class="org-logo"
-                  src="https://logo.clearbit.com/djsce.ac.in"
-                  alt="DJ Sanghvi College of Engineering logo"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  onerror="this.classList.add('is-hidden')"
-                />
-                <span class="org-fallback" aria-hidden="true">DJ</span>
-              </span> -->
-              <h3>Teaching Assistant • DJ Sanghvi College of Engineering</h3>
-            </div>
-            <p class="muted">Dec 2023 - May 2024 • Mumbai, India</p>
-            <ul>
-              <li>Supported instruction for Formal Language and Automata Theory for a 60-student cohort.</li>
-              <li>Conducted tutorials and one-on-one doubt sessions to improve problem-solving depth.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
-                <img
-                  class="org-logo"
-                  src="https://logo.clearbit.com/roiinstitute.net"
-                  alt="ROI Institute India logo"
-                  loading="lazy"
-                  referrerpolicy="no-referrer"
-                  onerror="this.classList.add('is-hidden')"
-                />
-                <span class="org-fallback" aria-hidden="true">RI</span>
-              </span> -->
-              <h3>Business Development Intern • ROI Institute India</h3>
-            </div>
-            <p class="muted">Jun 2023 - Aug 2023 • Mumbai, India</p>
-            <ul>
-              <li>Generated INR 50,000+ in qualified leads through market research and targeted outreach.</li>
-              <li>Supported go-to-market execution for seminars launched in Mumbai and Bangalore.</li>
             </ul>
           </article>
         </div>
@@ -579,6 +537,42 @@
       <a href="#top">Back to top</a>
     </footer>
 
-    <script src="./script.js?v=20260223-10"></script>
+    <div class="chat-nudge" id="chat-nudge" aria-live="polite">
+      Hi, I&apos;m Jarvis. Ask me about Yash.
+    </div>
+
+    <button class="chat-launcher" id="chat-launcher" type="button" aria-label="Open Jarvis assistant">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2.75c-3.45 0-6.25 2.8-6.25 6.25v2.15c-.87.23-1.5 1.02-1.5 1.97v1.76c0 1.13.92 2.05 2.05 2.05h.2A2.75 2.75 0 0 0 9.2 19h5.6a2.75 2.75 0 0 0 2.7-2.07h.2c1.13 0 2.05-.92 2.05-2.05v-1.76c0-.95-.63-1.74-1.5-1.97V9c0-3.45-2.8-6.25-6.25-6.25Zm-4.75 6.25a4.75 4.75 0 1 1 9.5 0v2.05h-9.5V9Zm2.85 4.9a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Zm3.8 0a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z" />
+      </svg>
+    </button>
+
+    <aside class="chatbot-panel" id="chatbot-panel" aria-hidden="true">
+      <div class="chatbot-head">
+        <div>
+          <h3>Jarvis</h3>
+          <p>Portfolio AI Assistant</p>
+        </div>
+        <button class="chatbot-close" id="chatbot-close" type="button" aria-label="Close assistant">×</button>
+      </div>
+
+      <div class="chatbot-prompts" id="chatbot-prompts">
+        <button type="button" class="chat-prompt">Experience</button>
+        <button type="button" class="chat-prompt">Projects</button>
+        <button type="button" class="chat-prompt">Leadership</button>
+        <button type="button" class="chat-prompt">Research</button>
+        <button type="button" class="chat-prompt">Skills</button>
+        <button type="button" class="chat-prompt">Contact</button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbot-messages"></div>
+
+      <form class="chatbot-input-row" id="chatbot-form">
+        <input id="chatbot-input" type="text" placeholder="Ask about resume, projects, research, contact..." />
+        <button type="submit" class="btn btn-primary">Ask</button>
+      </form>
+    </aside>
+
+    <script src="./script.js?v=20260223-16"></script>
   </body>
 </html>
