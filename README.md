@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio website repository.
+Personal [portfolio website](https://yashdoshi.vercel.app/) repository.
 
 ## Overview
 This repo contains the source code and assets for my portfolio site.
@@ -12,5 +12,5 @@ You may not copy, modify, distribute, or use any part of this repository or its 
 
 ## Contact
 - Email: yash.doshi@tamu.edu
-- LinkedIn: linkedin.com/in/yashdoshi8
-- GitHub: github.com/candelatesla
+- LinkedIn: [linkedin.com/in/yashdoshi8](https://www.linkedin.com/in/yashdoshi8/)
+- GitHub: [github.com/candelatesla](https://github.com/candelatesla/)
