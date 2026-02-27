@@ -383,3 +383,4 @@ form.addEventListener("submit", async (event) => {
     statusEl.textContent = "Could not send right now. Please email me directly at yash.doshi@tamu.edu.";
   }
 });
+
