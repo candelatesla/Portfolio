@@ -16,6 +16,8 @@ const chatbotMessages = document.querySelector("#chatbot-messages");
 const chatbotForm = document.querySelector("#chatbot-form");
 const chatbotInput = document.querySelector("#chatbot-input");
 const chatPromptButtons = document.querySelectorAll(".chat-prompt");
+const chatHistory = [];
+const CHAT_API_ENDPOINTS = ["/api/chat"];
 
 const THEME_KEY = "portfolio-theme";
 const setTheme = (theme) => {
@@ -159,7 +161,7 @@ const typeChatMessage = async (text) => {
 const summarizeExperience = () => {
   const roles = knowledgeBase.filter((item) => item.type === "experience");
   const lines = roles.map((item) => `• ${item.title}: ${item.summary}`);
-  return `Quick experience snapshot:\n${lines.join("\n")}`;
+  return lines.join("\n");
 };
 
 const summarizeSkills = () => {
@@ -168,6 +170,7 @@ const summarizeSkills = () => {
 };
 
 const detectIntent = (query) => {
+  if (query === "hire" || query.includes("hire")) return "hire";
   if (["experience", "exp"].includes(query) || query.includes("experience summary")) return "experience";
   if (query === "projects" || query.includes("project")) return "projects";
   if (query === "leadership" || query.includes("leadership")) return "leadership";
@@ -187,7 +190,11 @@ const answerFromKnowledge = (query) => {
   }
 
   if (intent === "skills") {
-    return `Skills summary:\n${summarizeSkills()}`;
+    return summarizeSkills();
+  }
+
+  if (intent === "hire") {
+    return "Yash combines full-stack execution, strong data/AI implementation, and leadership experience across academic and product environments. He has delivered scalable platforms, analytics improvements, and real user-facing systems end-to-end.";
   }
 
   const scored = knowledgeBase
@@ -204,6 +211,31 @@ const answerFromKnowledge = (query) => {
     return "I can help with experience, projects, leadership, research, skills, and contact details. Try one quick prompt above.";
   }
   return scored.map(({ item }) => `${item.title}: ${item.summary}`).join("\n");
+};
+
+const getApiAnswer = async (query) => {
+  let lastError = null;
+  for (const endpoint of CHAT_API_ENDPOINTS) {
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query,
+          history: chatHistory.slice(-8),
+        }),
+      });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || `Chat API request failed at ${endpoint}.`);
+      }
+      const payload = await response.json();
+      return payload.answer;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError || new Error("No chat endpoint available.");
 };
 
 if (chatLauncher && chatbotPanel && chatbotClose && chatbotForm && chatbotInput) {
@@ -240,16 +272,23 @@ if (chatLauncher && chatbotPanel && chatbotClose && chatbotForm && chatbotInput)
     });
   });
 
-  chatbotForm.addEventListener("submit", (event) => {
+  chatbotForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const query = chatbotInput.value.trim();
     if (!query || isTyping) return;
     addChatMessage(query, "user");
-    const answer = answerFromKnowledge(query);
+    chatHistory.push({ role: "user", content: query });
     isTyping = true;
+    let answer = "";
+    try {
+      answer = await getApiAnswer(query);
+    } catch (_error) {
+      answer = answerFromKnowledge(query);
+    }
     typeChatMessage(answer).finally(() => {
       isTyping = false;
     });
+    chatHistory.push({ role: "assistant", content: answer });
     chatbotInput.value = "";
   });
 
@@ -383,4 +422,3 @@ form.addEventListener("submit", async (event) => {
     statusEl.textContent = "Could not send right now. Please email me directly at yash.doshi@tamu.edu.";
   }
 });
-
