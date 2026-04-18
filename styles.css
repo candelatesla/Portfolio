@@ -829,13 +829,28 @@ h2 {
 
 .timeline-body { min-width: 0; }
 
-.timeline-head { margin-bottom: 0.25rem; }
+.timeline-head {
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
 
 .timeline-head h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+.timeline-company {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .timeline-date {
