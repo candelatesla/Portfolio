@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" role="img" aria-label="Tesla">
+  <!-- Top horizontal bar with concave notch at stem base -->
+  <path d="M 0 0 L 100 0 L 100 24
+           C 72 20, 62 30, 50 32
+           C 38 30, 28 20, 0 24 Z"
+        fill="#E31937"/>
+  <!-- Vertical stem tapering to a point -->
+  <path d="M 40 30 C 40 34, 46 65, 50 120
+                   C 54 65, 60 34, 60 30
+                   C 55 32, 45 32, 40 30 Z"
+        fill="#E31937"/>
+</svg>

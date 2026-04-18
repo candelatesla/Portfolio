@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Texas A&amp;M University">
+  <!-- Maroon square background -->
+  <rect width="100" height="100" rx="8" fill="#500000"/>
+  <!-- T crossbar (extends full width, sits above A and M) -->
+  <rect x="8" y="22" width="84" height="14" fill="#FFFFFF"/>
+  <!-- T vertical stem (center) -->
+  <rect x="43" y="22" width="14" height="60" fill="#FFFFFF"/>
+  <!-- A: left leg -->
+  <polygon points="18,82 30,36 38,36 28,82" fill="#FFFFFF"/>
+  <!-- A: right leg -->
+  <polygon points="42,82 32,36 40,36 50,82" fill="#FFFFFF"/>
+  <!-- A: crossbar -->
+  <rect x="22" y="62" width="24" height="8" fill="#500000"/>
+  <!-- M: left leg -->
+  <polygon points="50,82 50,36 58,36 58,82" fill="#FFFFFF"/>
+  <!-- M: right leg -->
+  <polygon points="82,82 82,36 74,36 74,82" fill="#FFFFFF"/>
+  <!-- M: left diagonal -->
+  <polygon points="50,36 58,36 68,62 62,62" fill="#FFFFFF"/>
+  <!-- M: right diagonal -->
+  <polygon points="82,36 74,36 64,62 70,62" fill="#FFFFFF"/>
+</svg>
