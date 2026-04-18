@@ -215,11 +215,11 @@ const CHAT_API_ENDPOINTS = ["/api/chat"];
 const knowledgeBase = [
   {
     type: "experience",
-    title: "Tesla — Incoming Intern",
-    summary: "Incoming intern at Tesla, Summer 2025.",
-    details: "Joining Tesla as an intern — details to follow.",
+    title: "Tesla — Data Engineering Intern",
+    summary: "Data Engineering Intern at Tesla, May – Dec 2026 (Summer & Fall).",
+    details: "Joining Tesla as a Data Engineering Intern — details to follow.",
     source: "Website experience section",
-    keywords: ["tesla", "intern", "incoming", "summer 2025"],
+    keywords: ["tesla", "data engineering", "intern", "2026"],
   },
   {
     type: "experience",
