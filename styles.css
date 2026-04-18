@@ -1,4 +1,175 @@
 /* ============================================================
+   PAGE LOADER — F1 LAUNCH SEQUENCE
+   ============================================================ */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #09090e;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.75s cubic-bezier(0.9, 0, 1, 1);
+}
+
+#page-loader.loader-out {
+  transform: translateY(-100%);
+}
+
+/* Track line across center */
+.loader-track {
+  position: absolute;
+  bottom: 36%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(229,24,26,0.5) 20%, rgba(229,24,26,0.5) 80%, transparent 100%);
+}
+
+/* Track dashes above line */
+.loader-track::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0; right: 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.12) 0px,
+    rgba(255,255,255,0.12) 24px,
+    transparent 24px,
+    transparent 48px
+  );
+}
+
+/* Centered brand text that fades in then out */
+.loader-brand {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: brandFade 2.2s ease forwards;
+}
+
+.loader-brand-name {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1;
+}
+
+.loader-brand-sub {
+  font-family: "Space Grotesk", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+@keyframes brandFade {
+  0%   { opacity: 0; transform: translateY(8px); }
+  20%  { opacity: 1; transform: translateY(0); }
+  70%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+/* Car wrapper — slides across the screen */
+.loader-car-wrap {
+  position: absolute;
+  bottom: calc(36% - 70px);  /* sit on the track line */
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  animation: carRush 1.45s cubic-bezier(0.04, 0, 0.78, 1) 0.55s both;
+  will-change: transform;
+}
+
+@keyframes carRush {
+  from { transform: translateX(-620px); }
+  to   { transform: translateX(calc(100vw + 180px)); }
+}
+
+/* Motion blur glow trail */
+.loader-trail {
+  position: absolute;
+  right: 100%;
+  top: 30%;
+  width: 420px;
+  height: 56px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(229,24,26,0.08) 30%,
+    rgba(229,24,26,0.35) 65%,
+    rgba(255,180,0,0.2) 100%
+  );
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* Speed lines */
+.loader-speed-lines {
+  position: absolute;
+  right: 102%;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.loader-speed-line {
+  height: 1.5px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), rgba(229,24,26,0.4));
+  transform-origin: right center;
+}
+
+.loader-speed-line:nth-child(1)  { width: 280px; opacity: 0.7; }
+.loader-speed-line:nth-child(2)  { width: 200px; opacity: 0.45; margin-left: 80px; }
+.loader-speed-line:nth-child(3)  { width: 240px; opacity: 0.6; }
+.loader-speed-line:nth-child(4)  { width: 160px; opacity: 0.3; margin-left: 120px; }
+.loader-speed-line:nth-child(5)  { width: 220px; opacity: 0.5; margin-left: 40px; }
+.loader-speed-line:nth-child(6)  { width: 180px; opacity: 0.35; margin-left: 100px; }
+.loader-speed-line:nth-child(7)  { width: 260px; opacity: 0.6; }
+.loader-speed-line:nth-child(8)  { width: 140px; opacity: 0.25; margin-left: 160px; }
+
+/* F1 car SVG sizing inside loader */
+.loader-car-svg {
+  width: 560px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 32px rgba(229,24,26,0.55));
+}
+
+/* Loader bottom sector marker */
+.loader-sector {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Space Grotesk", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+  animation: sectorPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes sectorPulse {
+  0%, 100% { opacity: 0.18; }
+  50%       { opacity: 0.45; }
+}
+
+/* ============================================================
    DESIGN TOKENS
    ============================================================ */
 :root {
@@ -611,11 +782,11 @@ h2 {
 }
 
 .org-logo-wrap {
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
   background: var(--surface-2);
   display: grid;
   place-items: center;
@@ -624,8 +795,8 @@ h2 {
 }
 
 .org-logo {
-  width: 72%;
-  height: 72%;
+  width: 82%;
+  height: 82%;
   object-fit: contain;
   border-radius: 6px;
 }
