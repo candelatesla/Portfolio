@@ -1,130 +1,155 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Yash Doshi geometric identity emblem">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" role="img" aria-label="Racing helmet with bold livery design">
   <defs>
-    <radialGradient id="bg" cx="0.5" cy="0.4" r="0.6">
-      <stop offset="0" stop-color="#1a1f2e" />
-      <stop offset="0.7" stop-color="#0e1118" />
-      <stop offset="1" stop-color="#080a10" />
+    <radialGradient id="shellGrad" cx="0.38" cy="0.28" r="0.72">
+      <stop offset="0"   stop-color="#ff3a22"/>
+      <stop offset="0.55" stop-color="#e10600"/>
+      <stop offset="1"   stop-color="#6e0100"/>
     </radialGradient>
-    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff4433" />
-      <stop offset="1" stop-color="#c80000" />
-    </linearGradient>
-    <linearGradient id="textGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f0f2f8" />
-      <stop offset="1" stop-color="#b0b8cc" />
-    </linearGradient>
-    <radialGradient id="aura" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#e5181a" stop-opacity="0.22" />
-      <stop offset="1" stop-color="#e5181a" stop-opacity="0" />
+    <radialGradient id="aura" cx="0.5" cy="0.52" r="0.52">
+      <stop offset="0"   stop-color="#e10600" stop-opacity="0.25"/>
+      <stop offset="1"   stop-color="#e10600" stop-opacity="0"/>
     </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    <linearGradient id="visorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#06080e"/>
+      <stop offset="1"   stop-color="#111522"/>
+    </linearGradient>
+    <linearGradient id="visorRefl" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0"   stop-color="#00c0d4" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00c0d4" stop-opacity="0.65"/>
+      <stop offset="0.75" stop-color="#ffffff"  stop-opacity="0.2"/>
+      <stop offset="1"   stop-color="#ffffff"  stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="chinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#10121e"/>
+      <stop offset="1"   stop-color="#040508"/>
+    </linearGradient>
+    <linearGradient id="stripe1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d0d4e0"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-20%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dy="16"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <!-- Clip to keep livery inside shell -->
+    <clipPath id="shellClip">
+      <path d="M 64 212 C 64 110, 336 110, 336 212 L 328 308 C 320 346, 290 376, 254 385 L 236 392 L 218 420 L 182 420 L 164 392 L 146 385 C 110 376, 80 346, 72 308 Z"/>
+    </clipPath>
   </defs>
 
   <!-- Ambient aura -->
-  <circle cx="200" cy="200" r="200" fill="url(#aura)" />
+  <ellipse cx="200" cy="255" rx="192" ry="205" fill="url(#aura)"/>
 
-  <!-- Outer thin ring -->
-  <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1" />
+  <g filter="url(#shadow)">
 
-  <!-- Tick ring (minor ticks every 5°, 72 total) -->
-  <!-- Circumference at r=180 = 1130.97, per tick = 15.71, dash=2 gap=13.71 -->
-  <circle cx="200" cy="200" r="180"
-    fill="none"
-    stroke="rgba(255,255,255,0.25)"
-    stroke-width="1.5"
-    stroke-dasharray="2 13.71"
-    stroke-dashoffset="-1"
-    transform="rotate(-90 200 200)" />
+    <!-- ── Shell base (darker rim) ─────────────────────── -->
+    <path d="M 56 210
+             C 56 102, 344 102, 344 210
+             L 336 308 C 328 350, 296 382, 258 392
+             L 240 398 L 218 428 L 182 428 L 160 398
+             L 142 392 C 104 382, 72 350, 64 308 Z"
+          fill="#5a0100"/>
 
-  <!-- Major tick marks every 30° (12 positions) -->
-  <g stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round">
-    <!-- 12 o'clock -->
-    <line x1="200" y1="22" x2="200" y2="42" />
-    <!-- 1 o'clock (30°) -->
-    <line x1="290" y1="46" x2="282" y2="60" />
-    <!-- 2 o'clock (60°) -->
-    <line x1="356" y1="110" x2="346" y2="120" />
-    <!-- 3 o'clock (90°) -->
-    <line x1="378" y1="200" x2="358" y2="200" />
-    <!-- 4 o'clock (120°) -->
-    <line x1="356" y1="290" x2="346" y2="280" />
-    <!-- 5 o'clock (150°) -->
-    <line x1="290" y1="354" x2="282" y2="340" />
-    <!-- 6 o'clock (180°) -->
-    <line x1="200" y1="378" x2="200" y2="358" />
-    <!-- 7 o'clock (210°) -->
-    <line x1="110" y1="354" x2="118" y2="340" />
-    <!-- 8 o'clock (240°) -->
-    <line x1="44" y1="290" x2="54" y2="280" />
-    <!-- 9 o'clock (270°) -->
-    <line x1="22" y1="200" x2="42" y2="200" />
-    <!-- 10 o'clock (300°) -->
-    <line x1="44" y1="110" x2="54" y2="120" />
-    <!-- 11 o'clock (330°) -->
-    <line x1="110" y1="46" x2="118" y2="60" />
+    <!-- ── Main red shell ───────────────────────────────── -->
+    <path d="M 64 212
+             C 64 110, 336 110, 336 212
+             L 328 308 C 320 346, 290 376, 254 385
+             L 236 392 L 218 420 L 182 420 L 164 392
+             L 146 385 C 110 376, 80 346, 72 308 Z"
+          fill="url(#shellGrad)"/>
+
+    <!-- ── Livery graphics (clipped to shell) ──────────── -->
+    <g clip-path="url(#shellClip)">
+
+      <!-- Large diagonal white stripe band across the helmet -->
+      <!-- Running from upper-left to lower-right -->
+      <path d="M 50 145 L 145 115 L 225 170 L 130 200 Z" fill="rgba(255,255,255,0.94)"/>
+      <!-- Secondary thinner white stripe parallel -->
+      <path d="M 62 175 L 148 148 L 168 168 L 80 195 Z" fill="rgba(255,255,255,0.35)"/>
+
+      <!-- Bold black accent slash crossing the white stripe -->
+      <path d="M 90 125 L 115 118 L 230 185 L 205 192 Z" fill="#07080d"/>
+      <!-- Thin black inner line -->
+      <path d="M 100 130 L 118 124 L 220 180 L 202 186 Z" fill="#0a0b11"/>
+
+      <!-- Right-side carbon-look panel -->
+      <path d="M 265 130 L 340 175 L 340 290 L 285 290 L 240 200 Z"
+            fill="rgba(0,0,0,0.22)"/>
+
+      <!-- Thin teal accent stripe -->
+      <path d="M 58 190 L 82 182 L 215 260 L 190 268 Z"
+            fill="rgba(0,192,212,0.55)"/>
+
+      <!-- Abstract speed mark / "slash" graphic on right side -->
+      <path d="M 280 160 L 330 178 L 322 195 L 268 175 Z" fill="rgba(255,255,255,0.15)"/>
+      <path d="M 275 175 L 330 195 L 323 210 L 266 190 Z" fill="rgba(255,255,255,0.09)"/>
+
+    </g>
+
+    <!-- ── Crown highlight (specular) ──────────────────── -->
+    <path d="M 128 148 C 168 118, 232 118, 272 148 C 228 132, 172 132, 128 148 Z"
+          fill="rgba(255,255,255,0.28)"/>
+
+    <!-- ── Left-edge depth shading ──────────────────────── -->
+    <path d="M 66 215 C 64 145, 86 116, 112 110
+             C 86 120, 68 158, 72 222 L 72 302
+             C 74 340, 88 368, 104 382
+             C 80 362, 66 330, 66 300 Z"
+          fill="rgba(0,0,0,0.22)"/>
+
+    <!-- ── Top vent ─────────────────────────────────────── -->
+    <rect x="182" y="112" width="36" height="16" rx="4" fill="#1a0100"/>
+    <rect x="186" y="116" width="28" height="2.5" rx="1" fill="#ff4433" opacity="0.7"/>
+    <rect x="186" y="121" width="28" height="2.5" rx="1" fill="#ff4433" opacity="0.5"/>
+
+    <!-- ── Crown racing stripe ──────────────────────────── -->
+    <rect x="193" y="112" width="14" height="86" rx="3" fill="url(#stripe1)"/>
+    <rect x="197" y="112" width="5"  height="86" rx="2" fill="rgba(0,192,212,0.55)"/>
+
+    <!-- ── Visor frame ──────────────────────────────────── -->
+    <path d="M 76 222 C 76 206, 90 198, 108 198
+             L 292 198 C 310 198, 324 206, 324 222
+             L 324 278 C 324 294, 310 302, 292 302
+             L 108 302 C 90 302, 76 294, 76 278 Z"
+          fill="#040508"/>
+
+    <!-- ── Visor glass ───────────────────────────────────── -->
+    <path d="M 88 228 C 88 216, 100 210, 114 210
+             L 286 210 C 300 210, 312 216, 312 228
+             L 312 272 C 312 284, 300 290, 286 290
+             L 114 290 C 100 290, 88 284, 88 272 Z"
+          fill="url(#visorGrad)"/>
+
+    <!-- ── Visor reflection ──────────────────────────────── -->
+    <path d="M 100 232 L 222 232 L 244 248 L 118 248 Z"
+          fill="url(#visorRefl)"/>
+    <!-- Subtle second reflection bottom-right -->
+    <path d="M 240 266 L 298 266 L 290 276 L 238 276 Z"
+          fill="rgba(0,192,212,0.1)"/>
+
+    <!-- ── Brow shadow ───────────────────────────────────── -->
+    <path d="M 76 220 L 324 220 L 320 226 L 80 226 Z" fill="rgba(0,0,0,0.42)"/>
+
+    <!-- ── Chin bar ──────────────────────────────────────── -->
+    <path d="M 90 302 L 310 302 L 292 372 L 244 392 L 156 392 L 108 372 Z"
+          fill="url(#chinGrad)"/>
+
+    <!-- Chin bar livery stripe (continuing the white band) -->
+    <path d="M 90 302 L 160 302 L 150 345 L 108 340 Z"
+          fill="rgba(255,255,255,0.12)"/>
+
+    <!-- ── Chin grille ───────────────────────────────────── -->
+    <rect x="162" y="330" width="76" height="32" rx="5" fill="#040508"/>
+    <g stroke="#1c2030" stroke-width="1.8" opacity="0.9">
+      <line x1="172" y1="338" x2="228" y2="338"/>
+      <line x1="172" y1="346" x2="228" y2="346"/>
+      <line x1="172" y1="354" x2="228" y2="354"/>
+      <line x1="186" y1="333" x2="186" y2="360"/>
+      <line x1="200" y1="333" x2="200" y2="360"/>
+      <line x1="214" y1="333" x2="214" y2="360"/>
+    </g>
+
   </g>
-
-  <!-- Red accent arc (top-right quadrant, 330° to 60°) -->
-  <!-- Arc from -30° to 60° = 90° sweep, cx=200,cy=200,r=180 -->
-  <!-- -30° start: x=200+180*cos(-30°)=355.88, y=200+180*sin(-30°)=110 -->
-  <!-- 60° end:  x=200+180*cos(60°)=290, y=200+180*sin(60°)=355.88 ... wait, let me do this properly -->
-  <!-- Actually, let me do 315° to 75° (passing through 0°/top) -->
-  <!-- In SVG coords: 0° is right, CCW from there. Top is -90° = 270° -->
-  <!-- I want the arc from upper-left (say -150° = 210°) around through top to right (0° / 3 o'clock) -->
-  <!-- Let me use a simpler arc: from top-left to right, roughly 240° to 0° in SVG space -->
-  <!-- Point at 240° from right = x=200+180*cos(240°)=200-90=110, y=200+180*sin(240°)=200-155.88=44.12 -->
-  <!-- Point at 0° (right) = x=380, y=200 -->
-  <!-- sweepFlag=1 (clockwise) for the short way around top -->
-  <path d="M 110 44 A 180 180 0 0 1 380 200"
-    fill="none" stroke="url(#redGrad)" stroke-width="3" stroke-linecap="round"
-    filter="url(#glow)" />
-
-  <!-- Inner main circle -->
-  <circle cx="200" cy="200" r="152" fill="url(#bg)" />
-
-  <!-- Circuit board accent lines (subtle) -->
-  <g stroke="rgba(0,192,212,0.2)" stroke-width="1" fill="none">
-    <path d="M 86 155 L 110 155 L 118 147 L 145 147" />
-    <path d="M 86 245 L 110 245 L 118 253 L 145 253" />
-    <path d="M 314 155 L 290 155 L 282 147 L 255 147" />
-    <path d="M 314 245 L 290 245 L 282 253 L 255 253" />
-    <!-- Small dots at corners -->
-    <circle cx="145" cy="147" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
-    <circle cx="145" cy="253" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
-    <circle cx="255" cy="147" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
-    <circle cx="255" cy="253" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
-  </g>
-
-  <!-- Inner decorative ring -->
-  <circle cx="200" cy="200" r="130" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-
-  <!-- YD monogram -->
-  <text x="200" y="216"
-    text-anchor="middle"
-    font-family="'Sora','Space Grotesk',sans-serif"
-    font-weight="800"
-    font-size="80"
-    letter-spacing="-2"
-    fill="url(#textGrad)">YD</text>
-
-  <!-- Sub-label -->
-  <text x="200" y="248"
-    text-anchor="middle"
-    font-family="'JetBrains Mono',monospace"
-    font-weight="400"
-    font-size="11"
-    letter-spacing="4"
-    fill="rgba(255,255,255,0.35)">ENGINEER</text>
-
-  <!-- Top red diamond marker (12 o'clock) -->
-  <polygon points="200,18 205,26 200,34 195,26" fill="url(#redGrad)" filter="url(#glow)" />
-
-  <!-- Right red marker (3 o'clock) -->
-  <circle cx="373" cy="200" r="5" fill="url(#redGrad)" filter="url(#glow)" />
-
-  <!-- Bottom thin separator -->
-  <line x1="164" y1="258" x2="236" y2="258" stroke="rgba(229,24,26,0.45)" stroke-width="1" />
 </svg>
