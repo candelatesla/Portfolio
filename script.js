@@ -215,6 +215,14 @@ const CHAT_API_ENDPOINTS = ["/api/chat"];
 const knowledgeBase = [
   {
     type: "experience",
+    title: "Tesla — Incoming Intern",
+    summary: "Incoming intern at Tesla, Summer 2025.",
+    details: "Joining Tesla as an intern — details to follow.",
+    source: "Website experience section",
+    keywords: ["tesla", "intern", "incoming", "summer 2025"],
+  },
+  {
+    type: "experience",
     title: "Texas A&M University — Full Stack Developer",
     summary: "Current full-stack role delivering student/internal features end-to-end across UI, APIs, and data.",
     details: "College Station, TX. Focused on reliable delivery and iterative feature ownership.",
@@ -339,7 +347,7 @@ const answerFromKnowledge = (query) => {
   if (intent === "experience") return summarizeExperience();
   if (intent === "skills")     return summarizeSkills();
   if (intent === "hire")
-    return "Yash combines full-stack execution, strong data/AI implementation, and leadership experience. He has delivered scalable platforms, analytics improvements, and real user-facing systems end-to-end.";
+    return "Yash is an incoming Tesla intern and is exploring full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. He combines full-stack execution, data/AI implementation, and leadership experience across real delivered systems.";
 
   const scored = knowledgeBase
     .map((item) => {
