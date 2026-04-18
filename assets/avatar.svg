@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Yash Doshi geometric identity emblem">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#1a1f2e" />
+      <stop offset="0.7" stop-color="#0e1118" />
+      <stop offset="1" stop-color="#080a10" />
+    </radialGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4433" />
+      <stop offset="1" stop-color="#c80000" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f2f8" />
+      <stop offset="1" stop-color="#b0b8cc" />
+    </linearGradient>
+    <radialGradient id="aura" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e5181a" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#e5181a" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient aura -->
+  <circle cx="200" cy="200" r="200" fill="url(#aura)" />
+
+  <!-- Outer thin ring -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1" />
+
+  <!-- Tick ring (minor ticks every 5°, 72 total) -->
+  <!-- Circumference at r=180 = 1130.97, per tick = 15.71, dash=2 gap=13.71 -->
+  <circle cx="200" cy="200" r="180"
+    fill="none"
+    stroke="rgba(255,255,255,0.25)"
+    stroke-width="1.5"
+    stroke-dasharray="2 13.71"
+    stroke-dashoffset="-1"
+    transform="rotate(-90 200 200)" />
+
+  <!-- Major tick marks every 30° (12 positions) -->
+  <g stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round">
+    <!-- 12 o'clock -->
+    <line x1="200" y1="22" x2="200" y2="42" />
+    <!-- 1 o'clock (30°) -->
+    <line x1="290" y1="46" x2="282" y2="60" />
+    <!-- 2 o'clock (60°) -->
+    <line x1="356" y1="110" x2="346" y2="120" />
+    <!-- 3 o'clock (90°) -->
+    <line x1="378" y1="200" x2="358" y2="200" />
+    <!-- 4 o'clock (120°) -->
+    <line x1="356" y1="290" x2="346" y2="280" />
+    <!-- 5 o'clock (150°) -->
+    <line x1="290" y1="354" x2="282" y2="340" />
+    <!-- 6 o'clock (180°) -->
+    <line x1="200" y1="378" x2="200" y2="358" />
+    <!-- 7 o'clock (210°) -->
+    <line x1="110" y1="354" x2="118" y2="340" />
+    <!-- 8 o'clock (240°) -->
+    <line x1="44" y1="290" x2="54" y2="280" />
+    <!-- 9 o'clock (270°) -->
+    <line x1="22" y1="200" x2="42" y2="200" />
+    <!-- 10 o'clock (300°) -->
+    <line x1="44" y1="110" x2="54" y2="120" />
+    <!-- 11 o'clock (330°) -->
+    <line x1="110" y1="46" x2="118" y2="60" />
+  </g>
+
+  <!-- Red accent arc (top-right quadrant, 330° to 60°) -->
+  <!-- Arc from -30° to 60° = 90° sweep, cx=200,cy=200,r=180 -->
+  <!-- -30° start: x=200+180*cos(-30°)=355.88, y=200+180*sin(-30°)=110 -->
+  <!-- 60° end:  x=200+180*cos(60°)=290, y=200+180*sin(60°)=355.88 ... wait, let me do this properly -->
+  <!-- Actually, let me do 315° to 75° (passing through 0°/top) -->
+  <!-- In SVG coords: 0° is right, CCW from there. Top is -90° = 270° -->
+  <!-- I want the arc from upper-left (say -150° = 210°) around through top to right (0° / 3 o'clock) -->
+  <!-- Let me use a simpler arc: from top-left to right, roughly 240° to 0° in SVG space -->
+  <!-- Point at 240° from right = x=200+180*cos(240°)=200-90=110, y=200+180*sin(240°)=200-155.88=44.12 -->
+  <!-- Point at 0° (right) = x=380, y=200 -->
+  <!-- sweepFlag=1 (clockwise) for the short way around top -->
+  <path d="M 110 44 A 180 180 0 0 1 380 200"
+    fill="none" stroke="url(#redGrad)" stroke-width="3" stroke-linecap="round"
+    filter="url(#glow)" />
+
+  <!-- Inner main circle -->
+  <circle cx="200" cy="200" r="152" fill="url(#bg)" />
+
+  <!-- Circuit board accent lines (subtle) -->
+  <g stroke="rgba(0,192,212,0.2)" stroke-width="1" fill="none">
+    <path d="M 86 155 L 110 155 L 118 147 L 145 147" />
+    <path d="M 86 245 L 110 245 L 118 253 L 145 253" />
+    <path d="M 314 155 L 290 155 L 282 147 L 255 147" />
+    <path d="M 314 245 L 290 245 L 282 253 L 255 253" />
+    <!-- Small dots at corners -->
+    <circle cx="145" cy="147" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
+    <circle cx="145" cy="253" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
+    <circle cx="255" cy="147" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
+    <circle cx="255" cy="253" r="2.5" fill="rgba(0,192,212,0.4)" stroke="none" />
+  </g>
+
+  <!-- Inner decorative ring -->
+  <circle cx="200" cy="200" r="130" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+
+  <!-- YD monogram -->
+  <text x="200" y="216"
+    text-anchor="middle"
+    font-family="'Sora','Space Grotesk',sans-serif"
+    font-weight="800"
+    font-size="80"
+    letter-spacing="-2"
+    fill="url(#textGrad)">YD</text>
+
+  <!-- Sub-label -->
+  <text x="200" y="248"
+    text-anchor="middle"
+    font-family="'JetBrains Mono',monospace"
+    font-weight="400"
+    font-size="11"
+    letter-spacing="4"
+    fill="rgba(255,255,255,0.35)">ENGINEER</text>
+
+  <!-- Top red diamond marker (12 o'clock) -->
+  <polygon points="200,18 205,26 200,34 195,26" fill="url(#redGrad)" filter="url(#glow)" />
+
+  <!-- Right red marker (3 o'clock) -->
+  <circle cx="373" cy="200" r="5" fill="url(#redGrad)" filter="url(#glow)" />
+
+  <!-- Bottom thin separator -->
+  <line x1="164" y1="258" x2="236" y2="258" stroke="rgba(229,24,26,0.45)" stroke-width="1" />
+</svg>

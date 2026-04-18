@@ -1,48 +1,204 @@
-const sections = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".nav a");
-const cursorGlow = document.querySelector(".cursor-glow");
-const projectButtons = document.querySelectorAll(".chip");
-const projectCards = document.querySelectorAll(".project-card");
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav");
-const themeToggleBtn = document.querySelector("#theme-toggle");
-const form = document.querySelector("#contact-form");
-const statusEl = document.querySelector("#form-status");
-const chatLauncher = document.querySelector("#chat-launcher");
-const chatNudge = document.querySelector("#chat-nudge");
-const chatbotPanel = document.querySelector("#chatbot-panel");
-const chatbotClose = document.querySelector("#chatbot-close");
-const chatbotMessages = document.querySelector("#chatbot-messages");
-const chatbotForm = document.querySelector("#chatbot-form");
-const chatbotInput = document.querySelector("#chatbot-input");
-const chatPromptButtons = document.querySelectorAll(".chat-prompt");
-const chatHistory = [];
-const CHAT_API_ENDPOINTS = ["/api/chat"];
-
+/* ============================================================
+   THEME
+   ============================================================ */
 const THEME_KEY = "portfolio-theme";
+const themeToggleBtn = document.querySelector("#theme-toggle");
+
 const setTheme = (theme) => {
   document.body.setAttribute("data-theme", theme);
   if (themeToggleBtn) {
-    themeToggleBtn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    themeToggleBtn.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
   }
 };
 
-const savedTheme = localStorage.getItem(THEME_KEY);
-setTheme(savedTheme === "light" ? "light" : "dark");
+setTheme(localStorage.getItem(THEME_KEY) === "light" ? "light" : "dark");
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
-    const currentTheme = document.body.getAttribute("data-theme") === "light" ? "light" : "dark";
-    const nextTheme = currentTheme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem(THEME_KEY, nextTheme);
+    const next = document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem(THEME_KEY, next);
   });
 }
+
+/* ============================================================
+   CURSOR GLOW
+   ============================================================ */
+const cursorGlow = document.querySelector(".cursor-glow");
+if (cursorGlow) {
+  let raf;
+  document.addEventListener("mousemove", (e) => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      cursorGlow.style.opacity = "1";
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
+    });
+  });
+  document.addEventListener("mouseleave", () => {
+    cursorGlow.style.opacity = "0";
+  });
+}
+
+/* ============================================================
+   MOBILE NAV
+   ============================================================ */
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector(".nav");
+const navLinks = document.querySelectorAll(".nav a");
+
+if (menuBtn && nav) {
+  menuBtn.addEventListener("click", () => {
+    const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", String(!expanded));
+    nav.classList.toggle("open");
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+const revealEls = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  },
+  { threshold: 0.1 }
+);
+revealEls.forEach((el) => revealObserver.observe(el));
+
+/* ============================================================
+   ACTIVE NAV SECTION
+   ============================================================ */
+const sectionIds = ["education", "experience", "projects", "research", "leadership", "skills", "awards", "contact"];
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+      });
+    });
+  },
+  { threshold: 0.45 }
+);
+
+sectionIds.forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) sectionObserver.observe(el);
+});
+
+/* ============================================================
+   TILT CARDS
+   ============================================================ */
+document.querySelectorAll(".tilt-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(900px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg) translateY(-3px)`;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "";
+  });
+});
+
+/* ============================================================
+   PROJECT FILTER
+   ============================================================ */
+const filterBtns = document.querySelectorAll(".chip");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
+
+    const filter = btn.dataset.filter;
+    projectCards.forEach((card) => {
+      const tags = (card.dataset.tags || "").split(/\s+/).filter(Boolean);
+      const show = filter === "all" || tags.includes(filter);
+      card.style.display = show ? "" : "none";
+      card.style.opacity  = show ? "" : "0";
+    });
+  });
+});
+
+/* ============================================================
+   FOOTER YEAR
+   ============================================================ */
+const yearEl = document.querySelector("#year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+const form     = document.querySelector("#contact-form");
+const statusEl = document.querySelector("#form-status");
+
+if (form && statusEl) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "Sending…";
+
+    const formData = new FormData(form);
+    formData.append("_subject", "New portfolio contact form message");
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/yash.doshi@tamu.edu", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      if (!res.ok) throw new Error();
+      form.reset();
+      statusEl.textContent = "Message sent — thanks!";
+    } catch {
+      statusEl.textContent = "Couldn't send right now. Email me directly at yash.doshi@tamu.edu";
+    }
+  });
+}
+
+/* ============================================================
+   CHATBOT
+   ============================================================ */
+const chatLauncher      = document.querySelector("#chat-launcher");
+const chatNudge         = document.querySelector("#chat-nudge");
+const chatbotPanel      = document.querySelector("#chatbot-panel");
+const chatbotClose      = document.querySelector("#chatbot-close");
+const chatbotMessages   = document.querySelector("#chatbot-messages");
+const chatbotForm       = document.querySelector("#chatbot-form");
+const chatbotInput      = document.querySelector("#chatbot-input");
+const chatPromptButtons = document.querySelectorAll(".chat-prompt");
+const chatHistory       = [];
+const CHAT_API_ENDPOINTS = ["/api/chat"];
 
 const knowledgeBase = [
   {
     type: "experience",
-    title: "Texas A&M University - Full Stack Developer",
+    title: "Texas A&M University — Full Stack Developer",
     summary: "Current full-stack role delivering student/internal features end-to-end across UI, APIs, and data.",
     details: "College Station, TX. Focused on reliable delivery and iterative feature ownership.",
     source: "Website experience section",
@@ -50,33 +206,17 @@ const knowledgeBase = [
   },
   {
     type: "experience",
-    title: "Acma Computers Ltd - Data Analyst Intern",
+    title: "Acma Computers Ltd — Data Analyst Intern",
     summary: "Built Python/SQL analytics workflows, improved data quality, and supported better infrastructure monitoring.",
-    details: "Jul 2024 - Oct 2024, Mumbai, India.",
+    details: "Jul 2024 – Oct 2024, Mumbai, India.",
     source: "Website + resume",
     keywords: ["acma", "data analyst", "intern", "python", "sql", "dashboard"],
   },
-  // {
-  //   type: "experience",
-  //   title: "C-DAC India - Software Developer Intern",
-  //   summary: "Developed an interactive virtual science simulator and deployed it for high-scale educational usage.",
-  //   details: "Dec 2023 - May 2024, Mumbai, India.",
-  //   source: "Website + GitHub (CDAC repo)",
-  //   keywords: ["cdac", "software developer", "simulator", "react", "vidyakash"],
-  // },
-  // {
-  //   type: "experience",
-  //   title: "DJ Sanghvi - Teaching Assistant",
-  //   summary: "Supported a 60-student theory course with tutorials and focused doubt-solving sessions.",
-  //   details: "Dec 2023 - May 2024, Mumbai, India.",
-  //   source: "Website + resume",
-  //   keywords: ["teaching assistant", "dj sanghvi", "automata", "formal language"],
-  // },
   {
     type: "experience",
-    title: "ROI Institute India - Business Development Intern",
+    title: "ROI Institute India — Business Development Intern",
     summary: "Generated qualified leads and supported go-to-market seminar launches across cities.",
-    details: "Jun 2023 - Aug 2023, Mumbai, India.",
+    details: "Jun 2023 – Aug 2023, Mumbai, India.",
     source: "Website + resume",
     keywords: ["roi institute", "business development", "leads", "gtm"],
   },
@@ -139,125 +279,96 @@ const addChatMessage = (text, role = "bot") => {
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 };
 
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const typeChatMessage = async (text) => {
   if (!chatbotMessages) return;
   const bubble = document.createElement("div");
   bubble.className = "chat-msg bot";
   chatbotMessages.appendChild(bubble);
-  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-
-  const chars = [...text];
-  for (let i = 0; i < chars.length; i += 1) {
-    bubble.textContent += chars[i];
+  for (const char of [...text]) {
+    bubble.textContent += char;
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    const char = chars[i];
-    const delay = char === "\n" ? 110 : /[.,:;!?]/.test(char) ? 55 : 16;
-    await wait(delay);
+    await wait(/[.,:;!?\n]/.test(char) ? 55 : 14);
   }
 };
 
-const summarizeExperience = () => {
-  const roles = knowledgeBase.filter((item) => item.type === "experience");
-  const lines = roles.map((item) => `• ${item.title}: ${item.summary}`);
-  return lines.join("\n");
-};
+const summarizeExperience = () =>
+  knowledgeBase
+    .filter((i) => i.type === "experience")
+    .map((i) => `• ${i.title}: ${i.summary}`)
+    .join("\n");
 
 const summarizeSkills = () => {
-  const skillNode = knowledgeBase.find((item) => item.type === "skills");
-  return skillNode ? `${skillNode.summary}\n${skillNode.details}` : "Skills include data, AI, and full-stack engineering capabilities.";
+  const s = knowledgeBase.find((i) => i.type === "skills");
+  return s ? `${s.summary}\n${s.details}` : "Python, SQL, React, Node.js, LangChain, and more.";
 };
 
-const detectIntent = (query) => {
-  if (query === "hire" || query.includes("hire")) return "hire";
-  if (["experience", "exp"].includes(query) || query.includes("experience summary")) return "experience";
-  if (query === "projects" || query.includes("project")) return "projects";
-  if (query === "leadership" || query.includes("leadership")) return "leadership";
-  if (query === "research" || query.includes("research")) return "research";
-  if (query === "skills" || query.includes("skill") || query.includes("tech stack")) return "skills";
-  if (query === "contact" || query.includes("contact") || query.includes("email") || query.includes("phone")) return "contact";
+const detectIntent = (q) => {
+  if (q.includes("hire"))                                         return "hire";
+  if (q.includes("experience") || q === "exp")                   return "experience";
+  if (q.includes("project"))                                      return "projects";
+  if (q.includes("leadership"))                                   return "leadership";
+  if (q.includes("research"))                                     return "research";
+  if (q.includes("skill") || q.includes("stack"))                return "skills";
+  if (q.includes("contact") || q.includes("email") || q.includes("phone")) return "contact";
   return "general";
 };
 
 const answerFromKnowledge = (query) => {
   const q = query.toLowerCase().trim();
-  if (!q) return "Please ask a question about experience, projects, leadership, research, or contact.";
+  if (!q) return "Ask me about experience, projects, leadership, research, or contact.";
   const intent = detectIntent(q);
-
-  if (intent === "experience") {
-    return summarizeExperience();
-  }
-
-  if (intent === "skills") {
-    return summarizeSkills();
-  }
-
-  if (intent === "hire") {
-    return "Yash combines full-stack execution, strong data/AI implementation, and leadership experience across academic and product environments. He has delivered scalable platforms, analytics improvements, and real user-facing systems end-to-end.";
-  }
+  if (intent === "experience") return summarizeExperience();
+  if (intent === "skills")     return summarizeSkills();
+  if (intent === "hire")
+    return "Yash combines full-stack execution, strong data/AI implementation, and leadership experience. He has delivered scalable platforms, analytics improvements, and real user-facing systems end-to-end.";
 
   const scored = knowledgeBase
     .map((item) => {
-      const keywordScore = item.keywords.reduce((acc, key) => acc + (q.includes(key) ? 2 : 0), 0);
-      const textScore = `${item.title} ${item.summary} ${item.details}`.toLowerCase().includes(q) ? 3 : 0;
-      return { item, score: keywordScore + textScore };
+      const kw = item.keywords.reduce((acc, k) => acc + (q.includes(k) ? 2 : 0), 0);
+      const txt = `${item.title} ${item.summary} ${item.details}`.toLowerCase().includes(q) ? 3 : 0;
+      return { item, score: kw + txt };
     })
-    .filter((entry) => entry.score > 0)
+    .filter((e) => e.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, 3);
 
-  if (!scored.length) {
-    return "I can help with experience, projects, leadership, research, skills, and contact details. Try one quick prompt above.";
-  }
+  if (!scored.length)
+    return "I can help with experience, projects, leadership, research, skills, and contact. Try a prompt above!";
   return scored.map(({ item }) => `${item.title}: ${item.summary}`).join("\n");
 };
 
 const getApiAnswer = async (query) => {
-  let lastError = null;
   for (const endpoint of CHAT_API_ENDPOINTS) {
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          query,
-          history: chatHistory.slice(-8),
-        }),
-      });
-      if (!response.ok) {
-        const payload = await response.json().catch(() => ({}));
-        throw new Error(payload.error || `Chat API request failed at ${endpoint}.`);
-      }
-      const payload = await response.json();
-      return payload.answer;
-    } catch (error) {
-      lastError = error;
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query, history: chatHistory.slice(-8) }),
+    });
+    if (!res.ok) {
+      const p = await res.json().catch(() => ({}));
+      throw new Error(p.error || `API failed at ${endpoint}`);
     }
+    const p = await res.json();
+    return p.answer;
   }
-  throw lastError || new Error("No chat endpoint available.");
+  throw new Error("No endpoint available.");
 };
 
 if (chatLauncher && chatbotPanel && chatbotClose && chatbotForm && chatbotInput) {
   let isTyping = false;
+
   if (chatNudge) {
-    window.setTimeout(() => {
-      chatNudge.classList.add("show");
-    }, 500);
-    window.setTimeout(() => {
-      chatNudge.classList.add("hide");
-      chatNudge.classList.remove("show");
-    }, 5200);
+    setTimeout(() => chatNudge.classList.add("show"), 600);
+    setTimeout(() => { chatNudge.classList.add("hide"); chatNudge.classList.remove("show"); }, 5500);
   }
 
   chatLauncher.addEventListener("click", () => {
     chatbotPanel.classList.add("open");
     chatbotPanel.setAttribute("aria-hidden", "false");
     chatbotInput.focus();
-    if (chatNudge) {
-      chatNudge.classList.add("hide");
-      chatNudge.classList.remove("show");
-    }
+    if (chatNudge) { chatNudge.classList.add("hide"); chatNudge.classList.remove("show"); }
   });
 
   chatbotClose.addEventListener("click", () => {
@@ -265,160 +376,34 @@ if (chatLauncher && chatbotPanel && chatbotClose && chatbotForm && chatbotInput)
     chatbotPanel.setAttribute("aria-hidden", "true");
   });
 
-  chatPromptButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      chatbotInput.value = button.textContent || "";
+  chatPromptButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      chatbotInput.value = btn.textContent || "";
       chatbotForm.requestSubmit();
     });
   });
 
-  chatbotForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  chatbotForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
     const query = chatbotInput.value.trim();
     if (!query || isTyping) return;
     addChatMessage(query, "user");
     chatHistory.push({ role: "user", content: query });
+    chatbotInput.value = "";
     isTyping = true;
     let answer = "";
     try {
       answer = await getApiAnswer(query);
-    } catch (_error) {
+    } catch {
       answer = answerFromKnowledge(query);
     }
-    typeChatMessage(answer).finally(() => {
-      isTyping = false;
-    });
+    await typeChatMessage(answer);
     chatHistory.push({ role: "assistant", content: answer });
-    chatbotInput.value = "";
+    isTyping = false;
   });
 
   isTyping = true;
-  typeChatMessage("Hi, I’m Jarvis. Ask about Yash’s experience, projects, leadership, research, skills, or contact details.").finally(
-    () => {
-      isTyping = false;
-    }
-  );
+  typeChatMessage(
+    "Hi, I'm Jarvis. Ask about Yash's experience, projects, leadership, research, skills, or contact details."
+  ).then(() => { isTyping = false; });
 }
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  { threshold: 0.18 }
-);
-sections.forEach((section) => observer.observe(section));
-
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const id = entry.target.id;
-      navLinks.forEach((link) => {
-        const isMatch = link.getAttribute("href") === `#${id}`;
-        link.classList.toggle("active", isMatch);
-      });
-    });
-  },
-  { threshold: 0.55 }
-);
-["education", "experience", "projects", "research", "leadership", "skills", "awards", "contact"].forEach((id) => {
-  const el = document.getElementById(id);
-  if (el) sectionObserver.observe(el);
-});
-
-menuBtn.addEventListener("click", () => {
-  const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-  menuBtn.setAttribute("aria-expanded", String(!expanded));
-  nav.classList.toggle("open");
-});
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
-});
-
-document.querySelectorAll('a[href="#top"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-
-projectButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
-    projectButtons.forEach((b) => {
-      b.classList.remove("active");
-      b.setAttribute("aria-selected", "false");
-    });
-
-    button.classList.add("active");
-    button.setAttribute("aria-selected", "true");
-
-    projectCards.forEach((card) => {
-      const tags = (card.dataset.tags || "").split(/\s+/).filter(Boolean);
-      const show = filter === "all" || tags.includes(filter);
-      card.style.display = show ? "block" : "none";
-    });
-  });
-});
-
-if (cursorGlow) {
-  document.addEventListener("mousemove", (event) => {
-    cursorGlow.style.opacity = "1";
-    cursorGlow.style.left = `${event.clientX}px`;
-    cursorGlow.style.top = `${event.clientY}px`;
-  });
-}
-
-const tiltCards = document.querySelectorAll(".tilt-card");
-tiltCards.forEach((card) => {
-  card.addEventListener("mousemove", (event) => {
-    const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const rotateX = ((y / rect.height) - 0.5) * -6;
-    const rotateY = ((x / rect.width) - 0.5) * 6;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
-  });
-});
-
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  statusEl.textContent = "Sending...";
-
-  const formData = new FormData(form);
-  formData.append("_subject", "New portfolio contact form message");
-
-  try {
-    const response = await fetch("https://formsubmit.co/ajax/yash.doshi@tamu.edu", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to submit form.");
-    }
-
-    form.reset();
-    statusEl.textContent = "Message sent successfully. Thank you.";
-  } catch (error) {
-    statusEl.textContent = "Could not send right now. Please email me directly at yash.doshi@tamu.edu.";
-  }
-});

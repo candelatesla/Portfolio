@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Yash Doshi" />
-    <meta name="theme-color" content="#0b0f17" />
+    <meta name="theme-color" content="#09090e" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="google-site-verification" content="mEhGwUzcHAX5W7TzMdgvWHV7F5djWppvL-luIrbVkQ4" />
     <meta
@@ -17,31 +17,22 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Yash Doshi | AI, Data, and Full-Stack Engineering Portfolio" />
-    <meta
-      property="og:description"
-      content="Graduate student and engineer focused on AI, data systems, analytics, and full-stack software. Explore projects, experience, research, leadership, and contact information."
-    />
+    <meta property="og:description" content="Graduate student and engineer focused on AI, data systems, analytics, and full-stack software. Explore projects, experience, research, leadership, and contact information." />
     <meta property="og:url" content="https://yashdoshi.vercel.app/" />
     <meta property="og:site_name" content="Yash Doshi Portfolio" />
     <meta property="og:image" content="https://yashdoshi.vercel.app/assets/og-image.svg" />
     <meta property="og:image:alt" content="Yash Doshi portfolio preview card" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Yash Doshi | AI, Data, and Full-Stack Engineering Portfolio" />
-    <meta
-      name="twitter:description"
-      content="Explore Yash Doshi's experience, AI and data projects, research, leadership, and contact information."
-    />
+    <meta name="twitter:description" content="Explore Yash Doshi's experience, AI and data projects, research, leadership, and contact information." />
     <meta name="twitter:image" content="https://yashdoshi.vercel.app/assets/og-image.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="./styles.css?v=20260308-2" />
+    <link rel="stylesheet" href="./styles.css?v=20260418" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -63,29 +54,11 @@
             "telephone": "+1-979-574-9820",
             "jobTitle": "Graduate Student and Engineer",
             "description": "Graduate student and engineer specializing in AI, data systems, analytics, and full-stack software development.",
-            "sameAs": [
-              "https://github.com/candelatesla",
-              "https://www.linkedin.com/in/yashdoshi8/"
-            ],
-            "knowsAbout": [
-              "Artificial Intelligence",
-              "Data Systems",
-              "Full-Stack Software Development",
-              "Analytics",
-              "Machine Learning",
-              "RAG",
-              "LangChain",
-              "LangGraph"
-            ],
+            "sameAs": ["https://github.com/candelatesla", "https://www.linkedin.com/in/yashdoshi8/"],
+            "knowsAbout": ["Artificial Intelligence","Data Systems","Full-Stack Software Development","Analytics","Machine Learning","RAG","LangChain","LangGraph"],
             "alumniOf": [
-              {
-                "@type": "CollegeOrUniversity",
-                "name": "Texas A&M University"
-              },
-              {
-                "@type": "CollegeOrUniversity",
-                "name": "University of Mumbai"
-              }
+              {"@type": "CollegeOrUniversity", "name": "Texas A&M University"},
+              {"@type": "CollegeOrUniversity", "name": "University of Mumbai"}
             ]
           }
         ]
@@ -94,11 +67,17 @@
   </head>
   <body>
     <div id="top" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <div class="bg-grid"  aria-hidden="true"></div>
     <div class="cursor-glow" aria-hidden="true"></div>
 
+    <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
     <header class="site-header">
-      <a class="brand" href="#top">YD</a>
+      <a class="brand" href="#top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        YD
+      </a>
+
       <nav class="nav" aria-label="Primary">
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
@@ -109,122 +88,162 @@
         <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="btn icon-btn mode-toggle-btn" id="theme-toggle" type="button" aria-label="Switch theme">
-        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.74 15.9A9 9 0 1 1 12.1 3.26a.75.75 0 0 1 .83.98 7.5 7.5 0 0 0 8.57 10.02.75.75 0 0 1 .98.84 9.13 9.13 0 0 1-1.74.8Z" />
-        </svg>
-        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 6.75A5.25 5.25 0 1 1 6.75 12 5.26 5.26 0 0 1 12 6.75Zm0-4a.75.75 0 0 1 .75.75v1.75a.75.75 0 0 1-1.5 0V3.5a.75.75 0 0 1 .75-.75Zm0 16a.75.75 0 0 1 .75.75v1.75a.75.75 0 0 1-1.5 0V19.5a.75.75 0 0 1 .75-.75Zm9.25-7.5a.75.75 0 0 1 0 1.5H19.5a.75.75 0 0 1 0-1.5Zm-16 0a.75.75 0 0 1 0 1.5H3.5a.75.75 0 0 1 0-1.5Zm12.02-5.27a.75.75 0 0 1 1.06 0l1.23 1.24a.75.75 0 0 1-1.06 1.06l-1.23-1.24a.75.75 0 0 1 0-1.06Zm-11.54 0a.75.75 0 0 1 1.06 1.06L5.56 8.28A.75.75 0 1 1 4.5 7.22Zm13.78 11.52a.75.75 0 0 1 1.06 1.06l-1.24 1.23a.75.75 0 1 1-1.06-1.06Zm-11.52 0a.75.75 0 0 1 0 1.06L6.76 19.8a.75.75 0 0 1-1.06-1.06Z" />
-        </svg>
-      </button>
-      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
+      <div class="header-actions">
+        <button class="mode-toggle-btn" id="theme-toggle" type="button" aria-label="Switch theme">
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.74 15.9A9 9 0 1 1 12.1 3.26a.75.75 0 0 1 .83.98 7.5 7.5 0 0 0 8.57 10.02.75.75 0 0 1 .98.84 9.13 9.13 0 0 1-1.74.8Z" />
+          </svg>
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 6.75A5.25 5.25 0 1 1 6.75 12 5.26 5.26 0 0 1 12 6.75Zm0-4a.75.75 0 0 1 .75.75v1.75a.75.75 0 0 1-1.5 0V3.5a.75.75 0 0 1 .75-.75Zm0 16a.75.75 0 0 1 .75.75v1.75a.75.75 0 0 1-1.5 0V19.5a.75.75 0 0 1 .75-.75Zm9.25-7.5a.75.75 0 0 1 0 1.5H19.5a.75.75 0 0 1 0-1.5Zm-16 0a.75.75 0 0 1 0 1.5H3.5a.75.75 0 0 1 0-1.5Zm12.02-5.27a.75.75 0 0 1 1.06 0l1.23 1.24a.75.75 0 0 1-1.06 1.06l-1.23-1.24a.75.75 0 0 1 0-1.06Zm-11.54 0a.75.75 0 0 1 1.06 1.06L5.56 8.28A.75.75 0 1 1 4.5 7.22Zm13.78 11.52a.75.75 0 0 1 1.06 1.06l-1.24 1.23a.75.75 0 1 1-1.06-1.06Zm-11.52 0a.75.75 0 0 1 0 1.06L6.76 19.8a.75.75 0 0 1-1.06-1.06Z" />
+          </svg>
+        </button>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <rect x="1" y="3" width="14" height="1.5" rx="0.75" />
+            <rect x="1" y="7.25" width="14" height="1.5" rx="0.75" />
+            <rect x="1" y="11.5" width="14" height="1.5" rx="0.75" />
+          </svg>
+          Menu
+        </button>
+      </div>
     </header>
 
     <main>
+
+      <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
       <section class="hero reveal" id="hero">
-        <p class="eyebrow">ENGINEER • BUILDER • DATA × AI</p>
-        <h1>Yash Chetan Doshi</h1>
-        <p class="hero-copy">
-          I build data-intensive and AI-enabled products end to end — from clean user experiences to reliable backend systems and analytics workflows.
-        </p>
-        <p class="availability">
-          Open to Summer 2026 internship roles in Data, AI, and Full-Stack Engineering.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Explore Projects</a>
-          <a class="btn btn-outline" href="#contact">Let's Connect</a>
+        <div class="hero-content">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Engineer &nbsp;·&nbsp; Builder &nbsp;·&nbsp; Data × AI
+          </p>
+
+          <h1>Yash Chetan<br />Doshi</h1>
+
+          <p class="hero-copy">
+            I build data-intensive and AI-enabled products end to end — from clean user experiences to reliable backend systems and analytics workflows.
+          </p>
+
+          <p class="availability">
+            <span class="avail-pulse" aria-hidden="true"></span>
+            Open to Summer 2026 internship roles in Data, AI &amp; Full-Stack Engineering
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-outline" href="#contact">Let's Connect</a>
+            <a class="btn btn-outline" href="./assets/Yash_Doshi_Resume.pdf" download>Resume ↓</a>
+          </div>
+
+          <div class="social-row">
+            <a class="icon-link" href="https://github.com/candelatesla" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.29 7.76 10.8.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.16.69-3.83-1.52-3.83-1.52-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.25 1.16-3.04-.12-.28-.5-1.45.11-3.01 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.56.23 2.73.11 3.01.72.79 1.16 1.8 1.16 3.04 0 4.37-2.66 5.33-5.2 5.61.41.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .31.2.67.79.56a11.26 11.26 0 0 0 7.75-10.8C23.25 5.48 18.27.5 12 .5Z" />
+              </svg>
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/yashdoshi8/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.75h4.46v11.5H2.75V9.75Zm7.01 0h4.27v1.57h.06c.59-1.12 2.05-2.3 4.22-2.3 4.52 0 5.35 2.98 5.35 6.86v7.37h-4.45v-6.53c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.52 1.7-2.52 3.45v6.64H9.76V9.75Z" />
+              </svg>
+            </a>
+            <a class="icon-link" href="mailto:yash.doshi@tamu.edu" aria-label="Email" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z" />
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="social-row">
-          <a
-            class="icon-link"
-            href="https://github.com/candelatesla"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            title="GitHub"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.29 7.76 10.8.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.16.69-3.83-1.52-3.83-1.52-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.25 1.16-3.04-.12-.28-.5-1.45.11-3.01 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.56.23 2.73.11 3.01.72.79 1.16 1.8 1.16 3.04 0 4.37-2.66 5.33-5.2 5.61.41.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .31.2.67.79.56a11.26 11.26 0 0 0 7.75-10.8C23.25 5.48 18.27.5 12 .5Z"
-              />
-            </svg>
-          </a>
-          <a
-            class="icon-link"
-            href="https://www.linkedin.com/in/yashdoshi8/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            title="LinkedIn"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.75h4.46v11.5H2.75V9.75Zm7.01 0h4.27v1.57h.06c.59-1.12 2.05-2.3 4.22-2.3 4.52 0 5.35 2.98 5.35 6.86v7.37h-4.45v-6.53c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.52 1.7-2.52 3.45v6.64H9.76V9.75Z"
-              />
-            </svg>
-          </a>
-          <a class="icon-link" href="mailto:yash.doshi@tamu.edu" aria-label="Email" title="Email">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z"
-              />
-            </svg>
-          </a>
-          <a href="./assets/Yash_Doshi_Resume.pdf" download>Resume</a>
-          <!-- <a href="https://leetcode.com/u/yashdoshi2003/">Leetcode</a> -->
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="avatar-wrap">
+            <img src="./assets/avatar.svg" alt="Geometric YD identity emblem" width="320" height="320" />
+          </div>
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ EDUCATION ═══════════════════════════ -->
       <section class="section reveal" id="education">
         <div class="section-head">
+          <span class="section-num">01</span>
           <h2>Education</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+
         <div class="cards two-col">
-          <article class="card tilt-card">
-            <h3>Texas A&amp;M University</h3>
-            <p class="muted">M.S. in Management Information Systems • College Station, TX</p>
-            <p>Aug 2025 - May 2027</p>
-            <p class="small">
-              Coursework: Advanced Data Management Systems, Statistical Foundations for Data
-              Science, Blockchain & AI Business Transformation, Corporate Information Planning, Business
-              Information Security
+          <article class="card edu-card tilt-card">
+            <div class="edu-meta">
+              <h3>Texas A&amp;M University</h3>
+              <span class="edu-badge">Current</span>
+            </div>
+            <p class="muted small">M.S. in Management Information Systems · College Station, TX</p>
+            <p class="small" style="margin: 0.4rem 0 0.6rem">Aug 2025 – May 2027</p>
+            <p class="small muted">
+              Coursework: Advanced Data Management Systems, Statistical Foundations for Data Science, Blockchain &amp; AI Business Transformation, Corporate Information Planning, Business Information Security
             </p>
           </article>
-          <article class="card tilt-card">
-            <h3>University of Mumbai</h3>
-            <p class="muted">B.Tech in Information Technology (Honors in DevOps) • Mumbai, India</p>
-            <p>Aug 2021 - May 2025</p>
-            <p>GPA: 3.96/4.0</p>
-            <p class="small">
-              Coursework: Database Management Systems, Data Mining &amp; Warehousing, Artificial
-              Intelligence, Machine Learning, Big Data Analytics, Statistical Analysis, Cloud Engineering, Data Structures &amp;
-              Algorithms.
+
+          <article class="card edu-card tilt-card">
+            <div class="edu-meta">
+              <h3>University of Mumbai</h3>
+              <span class="edu-badge">3.96 GPA</span>
+            </div>
+            <p class="muted small">B.Tech in Information Technology (Honors in DevOps) · Mumbai, India</p>
+            <p class="small" style="margin: 0.4rem 0 0.6rem">Aug 2021 – May 2025</p>
+            <p class="small muted">
+              Coursework: Database Management Systems, Data Mining &amp; Warehousing, Artificial Intelligence, Machine Learning, Big Data Analytics, Statistical Analysis, Cloud Engineering, Data Structures &amp; Algorithms
             </p>
           </article>
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════ -->
       <section class="section reveal" id="experience">
         <div class="section-head">
+          <span class="section-num">02</span>
           <h2>Experience</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+
         <div class="timeline">
+
+          <!-- Texas A&M -->
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>Full Stack Developer • Texas A&amp;M University</h3>
+            <div class="timeline-icon">
+              <div class="org-logo-wrap">
+                <img
+                  class="org-logo"
+                  src="https://logo.clearbit.com/tamu.edu"
+                  alt="Texas A&M University logo"
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  onerror="this.classList.add('is-hidden')"
+                  width="32" height="32"
+                />
+                <span class="org-fallback" aria-hidden="true">TAMU</span>
+              </div>
+              <div class="timeline-connector" aria-hidden="true"></div>
             </div>
-            <p class="muted">Current Role • College Station, TX</p>
-            <ul>
-              <li>Develop and maintain full-stack features for student-facing and internal university platforms.</li>
-              <li>Own implementation across frontend, backend APIs, and database layers for stable delivery.</li>
-              <li>Collaborate with stakeholders to prioritize, ship, and iterate features based on real usage.</li>
-            </ul>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <h3>Full Stack Developer</h3>
+              </div>
+              <p class="timeline-date">
+                <span class="timeline-date-dot" aria-hidden="true"></span>
+                Texas A&amp;M University · College Station, TX · Current Role
+              </p>
+              <ul>
+                <li>Develop and maintain full-stack features for student-facing and internal university platforms.</li>
+                <li>Own implementation across frontend, backend APIs, and database layers for stable delivery.</li>
+                <li>Collaborate with stakeholders to prioritize, ship, and iterate features based on real usage.</li>
+              </ul>
+            </div>
           </article>
+
+          <!-- Acma -->
           <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
+            <div class="timeline-icon">
+              <div class="org-logo-wrap">
                 <img
                   class="org-logo"
                   src="https://logo.clearbit.com/acma.in"
@@ -232,21 +251,32 @@
                   loading="lazy"
                   referrerpolicy="no-referrer"
                   onerror="this.classList.add('is-hidden')"
+                  width="32" height="32"
                 />
                 <span class="org-fallback" aria-hidden="true">AC</span>
-              </span> -->
-              <h3>Data Analyst Intern • Acma Computers Ltd</h3>
+              </div>
+              <div class="timeline-connector" aria-hidden="true"></div>
             </div>
-            <p class="muted">Jul 2024 - Oct 2024 • Mumbai, India</p>
-            <ul>
-              <li>Automated data cleaning workflows, improving dataset preparation efficiency by 15%.</li>
-              <li>Built Python + SQL dashboards for cross-functional infrastructure performance monitoring.</li>
-              <li>Improved data-stream accuracy by 20% and contributed to a 10% reduction in downtime.</li>
-            </ul>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <h3>Data Analyst Intern</h3>
+              </div>
+              <p class="timeline-date">
+                <span class="timeline-date-dot" aria-hidden="true"></span>
+                Acma Computers Ltd · Mumbai, India · Jul 2024 – Oct 2024
+              </p>
+              <ul>
+                <li>Automated data cleaning workflows, improving dataset preparation efficiency by 15%.</li>
+                <li>Built Python + SQL dashboards for cross-functional infrastructure performance monitoring.</li>
+                <li>Improved data-stream accuracy by 20% and contributed to a 10% reduction in downtime.</li>
+              </ul>
+            </div>
           </article>
+
+          <!-- C-DAC -->
           <article class="timeline-item">
-            <div class="timeline-head">
-              <!-- <span class="org-logo-wrap">
+            <div class="timeline-icon">
+              <div class="org-logo-wrap">
                 <img
                   class="org-logo"
                   src="https://logo.clearbit.com/cdac.in"
@@ -254,328 +284,389 @@
                   loading="lazy"
                   referrerpolicy="no-referrer"
                   onerror="this.classList.add('is-hidden')"
+                  width="32" height="32"
                 />
-                <span class="org-fallback" aria-hidden="true">CD</span>
-              </span> -->
-              <h3>Software Developer Intern • C-DAC India</h3>
+                <span class="org-fallback" aria-hidden="true">CDAC</span>
+              </div>
+              <div class="timeline-connector" aria-hidden="true"></div>
             </div>
-            <p class="muted">Dec 2023 - May 2024 • Mumbai, India</p>
-            <ul>
-              <li>Built a virtual science practical simulator using ReactJS, FlareJS, and Rive animations.</li>
-              <li>Designed onboarding, lab modules, and integrated quizzes to improve learning outcomes.</li>
-              <li>Deployed on Vidyakash, supporting an audience of over 2 million high school students.</li>
-            </ul>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <h3>Software Developer Intern</h3>
+              </div>
+              <p class="timeline-date">
+                <span class="timeline-date-dot" aria-hidden="true"></span>
+                C-DAC India · Mumbai, India · Dec 2023 – May 2024
+              </p>
+              <ul>
+                <li>Built a virtual science practical simulator using ReactJS, FlareJS, and Rive animations.</li>
+                <li>Designed onboarding, lab modules, and integrated quizzes to improve learning outcomes.</li>
+                <li>Deployed on Vidyakash, supporting an audience of over 2 million high school students.</li>
+              </ul>
+            </div>
           </article>
+
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ PROJECTS ═══════════════════════════ -->
       <section class="section reveal" id="projects">
         <div class="section-head">
+          <span class="section-num">03</span>
           <h2>Projects</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
-        
+
         <div class="chip-row" role="tablist" aria-label="Project filters">
-          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="chip" data-filter="data" role="tab" aria-selected="false">Data</button>
-          <button class="chip" data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
-          <button class="chip" data-filter="ai" role="tab" aria-selected="false">AI</button>
+          <button class="chip active" data-filter="all"       role="tab" aria-selected="true">All</button>
+          <button class="chip"        data-filter="data"      role="tab" aria-selected="false">Data</button>
+          <button class="chip"        data-filter="fullstack" role="tab" aria-selected="false">Full Stack</button>
+          <button class="chip"        data-filter="ai"        role="tab" aria-selected="false">AI</button>
         </div>
 
         <div class="cards three-col" id="project-grid">
+
           <article class="card project-card" data-tags="data">
-            <h3>AetherMart - Unified Data & AI Platform</h3>
-            <p>
-              Scalable hybrid e-commerce platform with AI-powered recommendation systems, modular services, and
-              production-oriented architecture for modern e-commerce operations.
-            </p>
-            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/AetherMart" target="_blank" rel="noreferrer">View Code</a>
+            <div class="project-tags">
+              <span class="project-tag">Data</span>
+              <span class="project-tag">AI</span>
+            </div>
+            <h3>AetherMart — Unified Data &amp; AI Platform</h3>
+            <p>Scalable hybrid e-commerce platform with AI-powered recommendation systems, modular services, and production-oriented architecture for modern e-commerce operations.</p>
+            <a class="btn btn-ghost" href="https://github.com/candelatesla/AetherMart" target="_blank" rel="noreferrer">View Code ↗</a>
           </article>
+
           <article class="card project-card" data-tags="data fullstack ai">
+            <div class="project-tags">
+              <span class="project-tag">Full Stack</span>
+              <span class="project-tag">AI</span>
+            </div>
             <h3>CMIS Engagement Platform</h3>
-            <p>
-              Full-featured engagement platform for CMIS at Texas A&amp;M with AI-based
-              student-mentor matching, event management, and automated operational workflows.
-            </p>
-            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/CMIS" target="_blank" rel="noreferrer">View Code</a>
+            <p>Full-featured engagement platform for CMIS at Texas A&amp;M with AI-based student-mentor matching, event management, and automated operational workflows.</p>
+            <a class="btn btn-ghost" href="https://github.com/candelatesla/CMIS" target="_blank" rel="noreferrer">View Code ↗</a>
           </article>
+
           <article class="card project-card" data-tags="data">
+            <div class="project-tags">
+              <span class="project-tag">Data</span>
+            </div>
             <h3>Data-Analyzer</h3>
-            <p>
-              Python and Streamlit-based analytics tool for automated streamlined data cleaning, exploratory
-              analysis, and visualization to accelerate insight generation.
-            </p>
-            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/DataAnalyzer" target="_blank" rel="noreferrer">View Code</a>
+            <p>Python and Streamlit-based analytics tool for automated streamlined data cleaning, exploratory analysis, and visualization to accelerate insight generation.</p>
+            <a class="btn btn-ghost" href="https://github.com/candelatesla/DataAnalyzer" target="_blank" rel="noreferrer">View Code ↗</a>
           </article>
+
           <article class="card project-card" data-tags="data">
-            <h3>Airline-Management-System</h3>
-            <p>
-              Comprehensive airline operations desktop application handling scheduling, booking, and
-              passenger management with structured workflow control.
-            </p>
-            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/AirlineManagementSystem" target="_blank" rel="noreferrer">View Code</a>
+            <div class="project-tags">
+              <span class="project-tag">Data</span>
+            </div>
+            <h3>Airline Management System</h3>
+            <p>Comprehensive airline operations desktop application handling scheduling, booking, and passenger management with structured workflow control.</p>
+            <a class="btn btn-ghost" href="https://github.com/candelatesla/AirlineManagementSystem" target="_blank" rel="noreferrer">View Code ↗</a>
           </article>
+
           <article class="card project-card" data-tags="fullstack">
+            <div class="project-tags">
+              <span class="project-tag">Full Stack</span>
+            </div>
             <h3>Virtual Science Practical Simulator</h3>
-            <p>
-              Dynamic educational simulation platform developed for C-DAC, combining interactive visual
-              modules, guided practicals, and structured assessments at scale.
-            </p>
-            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/CDAC" target="_blank" rel="noreferrer">View Code</a>
+            <p>Dynamic educational simulation platform developed for C-DAC, combining interactive visual modules, guided practicals, and structured assessments at scale.</p>
+            <a class="btn btn-ghost" href="https://github.com/candelatesla/CDAC" target="_blank" rel="noreferrer">View Code ↗</a>
           </article>
+
           <article class="card project-card" data-tags="ai">
+            <div class="project-tags">
+              <span class="project-tag">AI</span>
+              <span class="project-tag">Agents</span>
+            </div>
             <h3>AI-Agent-Lab</h3>
-            <p>
-              Collection of production-style agentic AI experiments using LangGraph, LangChain, and
-              CrewAI for orchestration, tool use, and multi-agent execution patterns.
-            </p>
-            <a class="btn research-link-btn project-link-btn" href="https://github.com/candelatesla/AI-Agent-Lab" target="_blank" rel="noreferrer">View Code</a>
+            <p>Collection of production-style agentic AI experiments using LangGraph, LangChain, and CrewAI for orchestration, tool use, and multi-agent execution patterns.</p>
+            <a class="btn btn-ghost" href="https://github.com/candelatesla/AI-Agent-Lab" target="_blank" rel="noreferrer">View Code ↗</a>
           </article>
+
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ RESEARCH ═══════════════════════════ -->
       <section class="section reveal" id="research">
         <div class="section-head">
+          <span class="section-num">04</span>
           <h2>Research</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+
         <div class="research-list">
+
           <article class="research-item">
             <div class="research-meta">
               <h3>Interpretable Machine Learning in Healthcare – An XAI Approach for Diabetes Prediction</h3>
-              <p class="muted">Presented at ICMAAI-25 • June 2025</p>
-              <p>
-                Explored XAI methods for diabetes prediction to improve model transparency and trust in
-                healthcare decision support.
-              </p>
+              <p>Explored XAI methods for diabetes prediction to improve model transparency and trust in healthcare decision support.</p>
+              <p><span class="research-venue">ICMAAI-25 · June 2025</span></p>
             </div>
-            <a
-              class="btn research-link-btn"
-              href="https://www.linkedin.com/in/yashdoshi8/details/projects/1750089808670/single-media-viewer/?profileId=ACoAADk1mBsBaP3tyjNDk63VVJSVnG2LiEUh8qM"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Link
-            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/yashdoshi8/details/projects/1750089808670/single-media-viewer/?profileId=ACoAADk1mBsBaP3tyjNDk63VVJSVnG2LiEUh8qM" target="_blank" rel="noreferrer">View ↗</a>
           </article>
 
           <article class="research-item">
             <div class="research-meta">
               <h3>Revolutionizing Anxiety Treatment: The Role of Augmented Reality in Exposure Therapy</h3>
-              <p class="muted">Published in IEEE Xplore • April 2025</p>
-              <p>
-                Integrated augmented reality into exposure therapy to improve patient engagement,
-                personalization, and treatment outcomes.
-              </p>
+              <p>Integrated augmented reality into exposure therapy to improve patient engagement, personalization, and treatment outcomes.</p>
+              <p><span class="research-venue">IEEE Xplore · April 2025</span></p>
             </div>
-            <a class="btn research-link-btn" href="https://ieeexplore.ieee.org/document/10960229" target="_blank" rel="noreferrer">
-              Link
-            </a>
+            <a class="btn btn-ghost" href="https://ieeexplore.ieee.org/document/10960229" target="_blank" rel="noreferrer">View ↗</a>
           </article>
 
           <article class="research-item">
             <div class="research-meta">
               <h3>Comparison of YOLO Models Object Detection from Parking Spot Images</h3>
-              <p class="muted">Scopus-indexed journal publication • April 2024</p>
-              <p>
-                Benchmarked YOLO variants across precision, recall, runtime, and usability for practical
-                object detection deployment.
-              </p>
+              <p>Benchmarked YOLO variants across precision, recall, runtime, and usability for practical object detection deployment.</p>
+              <p><span class="research-venue">Scopus-indexed · April 2024</span></p>
             </div>
-            <a class="btn research-link-btn" href="https://kuey.net/index.php/kuey/article/view/7025" target="_blank" rel="noreferrer">
-              Link
-            </a>
+            <a class="btn btn-ghost" href="https://kuey.net/index.php/kuey/article/view/7025" target="_blank" rel="noreferrer">View ↗</a>
           </article>
+
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ LEADERSHIP ═══════════════════════════ -->
       <section class="section reveal" id="leadership">
         <div class="section-head">
+          <span class="section-num">05</span>
           <h2>Leadership</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+
         <div class="timeline">
+
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>Event Coordinator • Business Information Technology Students Club (BITS TAMU)</h3>
+            <div class="timeline-icon">
+              <div class="org-logo-wrap">
+                <img
+                  class="org-logo"
+                  src="https://logo.clearbit.com/tamu.edu"
+                  alt="BITS TAMU logo"
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  onerror="this.classList.add('is-hidden')"
+                  width="32" height="32"
+                />
+                <span class="org-fallback" aria-hidden="true">BITS</span>
+              </div>
+              <div class="timeline-connector" aria-hidden="true"></div>
             </div>
-            <p class="muted">Texas A&amp;M University • College Station, TX</p>
-            <ul>
-              <li>Coordinate club events and networking initiatives focused on business-technology students.</li>
-              <li>Drive event planning and execution for stronger student engagement and industry interaction.</li>
-            </ul>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <h3>Event Coordinator</h3>
+              </div>
+              <p class="timeline-date">
+                <span class="timeline-date-dot" aria-hidden="true"></span>
+                Business Information Technology Students Club (BITS TAMU) · Texas A&amp;M University
+              </p>
+              <ul>
+                <li>Coordinate club events and networking initiatives focused on business-technology students.</li>
+                <li>Drive event planning and execution for stronger student engagement and industry interaction.</li>
+              </ul>
+            </div>
           </article>
+
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>Mentor &amp; Marketing Head • Computer Society of India (CSI)</h3>
+            <div class="timeline-icon">
+              <div class="org-logo-wrap">
+                <img
+                  class="org-logo"
+                  src="https://logo.clearbit.com/csi-india.org"
+                  alt="Computer Society of India logo"
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  onerror="this.classList.add('is-hidden')"
+                  width="32" height="32"
+                />
+                <span class="org-fallback" aria-hidden="true">CSI</span>
+              </div>
+              <div class="timeline-connector" aria-hidden="true"></div>
             </div>
-            <p class="muted">Aug 2023 - May 2025 • Mumbai, India</p>
-            <ul>
-              <li>Led an 80+ member team delivering hackathons, workshops, and large-scale tech events.</li>
-              <li>Managed marketing strategy, sponsorships, and partnerships to scale visibility and funding.</li>
-            </ul>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <h3>Mentor &amp; Marketing Head</h3>
+              </div>
+              <p class="timeline-date">
+                <span class="timeline-date-dot" aria-hidden="true"></span>
+                Computer Society of India (CSI) · Mumbai · Aug 2023 – May 2025
+              </p>
+              <ul>
+                <li>Led an 80+ member team delivering hackathons, workshops, and large-scale tech events.</li>
+                <li>Managed marketing strategy, sponsorships, and partnerships to scale visibility and funding.</li>
+              </ul>
+            </div>
           </article>
+
           <article class="timeline-item">
-            <div class="timeline-head">
-              <h3>Placement and Internship Coordinator • DJ Sanghvi College of Engineering</h3>
+            <div class="timeline-icon">
+              <div class="org-logo-wrap">
+                <img
+                  class="org-logo"
+                  src="https://logo.clearbit.com/djsce.ac.in"
+                  alt="DJ Sanghvi College of Engineering logo"
+                  loading="lazy"
+                  referrerpolicy="no-referrer"
+                  onerror="this.classList.add('is-hidden')"
+                  width="32" height="32"
+                />
+                <span class="org-fallback" aria-hidden="true">DJSCE</span>
+              </div>
+              <div class="timeline-connector" aria-hidden="true"></div>
             </div>
-            <p class="muted">Sep 2023 - May 2025 • Mumbai, India</p>
-            <ul>
-              <li>Worked with the placement office and recruiters to streamline internship/job pipelines.</li>
-              <li>Guided 600+ students through resume reviews, mock interviews, and placement-prep sessions.</li>
-            </ul>
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <h3>Placement &amp; Internship Coordinator</h3>
+              </div>
+              <p class="timeline-date">
+                <span class="timeline-date-dot" aria-hidden="true"></span>
+                DJ Sanghvi College of Engineering · Mumbai · Sep 2023 – May 2025
+              </p>
+              <ul>
+                <li>Worked with the placement office and recruiters to streamline internship/job pipelines.</li>
+                <li>Guided 600+ students through resume reviews, mock interviews, and placement-prep sessions.</li>
+              </ul>
+            </div>
           </article>
+
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
       <section class="section reveal" id="skills">
         <div class="section-head">
+          <span class="section-num">06</span>
           <h2>Skills</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+
         <div class="skills-grid">
           <article class="card skill-card">
             <h3>Languages</h3>
             <div class="skill-tags">
-              <span>Python</span><span>R</span><span>SQL</span><span>JavaScript</span><span>TypeScript</span>
-              <span>Java</span><span>C</span><span>HTML/CSS</span>
+              <span>Python</span><span>R</span><span>SQL</span><span>JavaScript</span>
+              <span>TypeScript</span><span>Java</span><span>C</span><span>HTML/CSS</span>
             </div>
           </article>
+
           <article class="card skill-card">
-            <h3>Software</h3>
+            <h3>Software &amp; Cloud</h3>
             <div class="skill-tags">
               <span>React</span><span>Node.js</span><span>REST APIs</span><span>Git</span>
               <span>JIRA</span><span>AWS</span><span>Google Cloud</span><span>MLOps</span>
             </div>
           </article>
+
           <article class="card skill-card">
             <h3>Data</h3>
             <div class="skill-tags">
-              <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Tableau</span><span>Power BI</span>
-              <span>MySQL</span><span>MariaDB</span><span>MongoDB</span><span>Hadoop</span>
-              <span>PostgreSQL</span><span>NoSQL</span><span>Vector Databases</span>
+              <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Tableau</span>
+              <span>Power BI</span><span>MySQL</span><span>MariaDB</span><span>MongoDB</span>
+              <span>Hadoop</span><span>PostgreSQL</span><span>NoSQL</span><span>Vector Databases</span>
             </div>
           </article>
+
           <article class="card skill-card">
-            <h3>AI/ML</h3>
+            <h3>AI / ML</h3>
             <div class="skill-tags">
               <span>LLMs</span><span>Agentic AI</span><span>RAG</span><span>LangGraph</span>
               <span>LangChain</span><span>CrewAI</span><span>XAI</span><span>YOLO</span>
               <span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>Recommendation Systems</span>
             </div>
           </article>
-          <article class="card skill-card">
+
+          <article class="card skill-card" style="grid-column: 1 / -1">
             <h3>Certifications</h3>
             <div class="skill-tags">
-              <span>AWS Certified AI Practitioner</span><span>Google Cloud Practitioner</span><span>n8n</span><span>AI for Project Managers</span>
+              <span>AWS Certified AI Practitioner</span>
+              <span>Google Cloud Practitioner</span>
+              <span>n8n</span>
+              <span>AI for Project Managers</span>
             </div>
           </article>
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ AWARDS ═══════════════════════════════ -->
       <section class="section reveal" id="awards">
         <div class="section-head">
+          <span class="section-num">07</span>
           <h2>Awards</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
+
         <div class="cards two-col">
-          <article class="card">
-            <h3>2nd Prize - CMIS Case Competition 2025</h3>
-            <p class="muted">Dec 2025 • Texas A&amp;M University</p>
-            <p>
-              As part of a four-member team, I designed and developed the CMIS Engagement Platform,
-              an end-to-end system that modernized how students, mentors, and judges collaborate
-              across CMIS case workflows.
+          <article class="card award-card">
+            <p class="award-badge">🏆 2nd Place</p>
+            <h3>CMIS Case Competition 2025</h3>
+            <p class="muted small" style="margin-bottom:0.5rem">Dec 2025 · Texas A&amp;M University</p>
+            <p class="small muted">
+              As part of a four-member team, designed and developed the CMIS Engagement Platform — an end-to-end system modernizing how students, mentors, and judges collaborate across case workflows.
             </p>
           </article>
-          <article class="card">
-            <h3>3rd Prize - Google Labs x Aggies-in-Tech Makeathon 2025</h3>
-            <p class="muted">Nov 2025 • Texas A&amp;M University</p>
-            <p>
-              Built an AI-assisted accessibility application that ingests study materials (audio, text,
-              PDF, and slides) and converts them into faster, more accessible learning formats using
-              Google Labs tooling.
+
+          <article class="card award-card">
+            <p class="award-badge">🥉 3rd Place</p>
+            <h3>Google Labs × Aggies-in-Tech Makeathon 2025</h3>
+            <p class="muted small" style="margin-bottom:0.5rem">Nov 2025 · Texas A&amp;M University</p>
+            <p class="small muted">
+              Built an AI-assisted accessibility application ingesting study materials (audio, text, PDF, slides) and converting them into faster, more accessible learning formats using Google Labs tooling.
             </p>
           </article>
         </div>
       </section>
 
+      <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
       <section class="section reveal" id="contact">
         <div class="section-head">
+          <span class="section-num">08</span>
           <h2>Contact</h2>
-          <span class="section-rule"></span>
+          <span class="section-rule" aria-hidden="true"></span>
         </div>
 
         <div class="contact-grid">
           <article class="card">
             <h3>Get in touch</h3>
-            <p>
-              Open to Summer 2026 internships, research collaborations, and engineering roles in AI,
-              data, and full-stack software.
-            </p>
+            <p class="muted small">Open to Summer 2026 internships, research collaborations, and engineering roles in AI, data, and full-stack software.</p>
+
             <div class="contact-items" aria-label="Contact methods">
               <a class="contact-item" href="mailto:yash.doshi@tamu.edu" aria-label="Email Yash Doshi">
                 <span class="contact-item-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z"
-                    />
-                  </svg>
+                  <svg viewBox="0 0 24 24"><path d="M2.5 5.75A2.25 2.25 0 0 1 4.75 3.5h14.5a2.25 2.25 0 0 1 2.25 2.25v12.5a2.25 2.25 0 0 1-2.25 2.25H4.75A2.25 2.25 0 0 1 2.5 18.25V5.75Zm2.52-.75 6.98 5.43L18.98 5H5.02Zm14.98 2.19-6.78 5.28a2 2 0 0 1-2.44 0L4 7.19v11.06c0 .41.34.75.75.75h14.5c.41 0 .75-.34.75-.75V7.19Z" /></svg>
                 </span>
-                <span class="contact-item-text">
-                  <span class="contact-item-value">Email</span>
-
+                <span>
+                  <span class="contact-item-label">Email</span>
+                  <span class="contact-item-value">yash.doshi@tamu.edu</span>
                 </span>
               </a>
 
               <a class="contact-item" href="tel:+19795749820" aria-label="Call Yash Doshi">
                 <span class="contact-item-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M6.62 3.2a1.5 1.5 0 0 1 1.66-.37l2.2.88c.58.23.93.84.84 1.46l-.35 2.28a1.5 1.5 0 0 1-.62 1c-.44.31-.93.54-1.25.66a13.3 13.3 0 0 0 5.78 5.78c.12-.32.35-.81.66-1.25.25-.37.61-.58 1-.62l2.28-.35c.62-.09 1.23.26 1.46.84l.88 2.2c.24.59.1 1.27-.37 1.66l-1.84 1.53c-.51.42-1.2.59-1.85.45-2.15-.46-5.45-1.8-8.74-5.1-3.3-3.29-4.64-6.59-5.1-8.74a2.1 2.1 0 0 1 .45-1.85L6.62 3.2Z"
-                    />
-                  </svg>
+                  <svg viewBox="0 0 24 24"><path d="M6.62 3.2a1.5 1.5 0 0 1 1.66-.37l2.2.88c.58.23.93.84.84 1.46l-.35 2.28a1.5 1.5 0 0 1-.62 1c-.44.31-.93.54-1.25.66a13.3 13.3 0 0 0 5.78 5.78c.12-.32.35-.81.66-1.25.25-.37.61-.58 1-.62l2.28-.35c.62-.09 1.23.26 1.46.84l.88 2.2c.24.59.1 1.27-.37 1.66l-1.84 1.53c-.51.42-1.2.59-1.85.45-2.15-.46-5.45-1.8-8.74-5.1-3.3-3.29-4.64-6.59-5.1-8.74a2.1 2.1 0 0 1 .45-1.85L6.62 3.2Z" /></svg>
                 </span>
-                <span class="contact-item-text">
+                <span>
+                  <span class="contact-item-label">Phone</span>
                   <span class="contact-item-value">+1 (979) 574-9820</span>
                 </span>
               </a>
-              
-              <a
-                class="contact-item"
-                href="https://github.com/candelatesla"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open GitHub profile"
-              >
+
+              <a class="contact-item" href="https://github.com/candelatesla" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <span class="contact-item-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.29 7.76 10.8.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.16.69-3.83-1.52-3.83-1.52-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.25 1.16-3.04-.12-.28-.5-1.45.11-3.01 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.56.23 2.73.11 3.01.72.79 1.16 1.8 1.16 3.04 0 4.37-2.66 5.33-5.2 5.61.41.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .31.2.67.79.56a11.26 11.26 0 0 0 7.75-10.8C23.25 5.48 18.27.5 12 .5Z"
-                    />
-                  </svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.25 9.29 7.76 10.8.57.1.78-.25.78-.56 0-.28-.01-1.02-.02-2-3.16.69-3.83-1.52-3.83-1.52-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.25 1.16-3.04-.12-.28-.5-1.45.11-3.01 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.56.23 2.73.11 3.01.72.79 1.16 1.8 1.16 3.04 0 4.37-2.66 5.33-5.2 5.61.41.35.77 1.03.77 2.08 0 1.5-.01 2.71-.01 3.08 0 .31.2.67.79.56a11.26 11.26 0 0 0 7.75-10.8C23.25 5.48 18.27.5 12 .5Z" /></svg>
                 </span>
-                <span class="contact-item-text">
-                  <span class="contact-item-value">GitHub</span>
+                <span>
+                  <span class="contact-item-label">GitHub</span>
+                  <span class="contact-item-value">candelatesla</span>
                 </span>
               </a>
 
-              <a
-                class="contact-item"
-                href="https://www.linkedin.com/in/yashdoshi8/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open LinkedIn profile"
-              >
+              <a class="contact-item" href="https://www.linkedin.com/in/yashdoshi8/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <span class="contact-item-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path
-                      d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.75h4.46v11.5H2.75V9.75Zm7.01 0h4.27v1.57h.06c.59-1.12 2.05-2.3 4.22-2.3 4.52 0 5.35 2.98 5.35 6.86v7.37h-4.45v-6.53c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.52 1.7-2.52 3.45v6.64H9.76V9.75Z"
-                    />
-                  </svg>
+                  <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.75 9.75h4.46v11.5H2.75V9.75Zm7.01 0h4.27v1.57h.06c.59-1.12 2.05-2.3 4.22-2.3 4.52 0 5.35 2.98 5.35 6.86v7.37h-4.45v-6.53c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.52 1.7-2.52 3.45v6.64H9.76V9.75Z" /></svg>
                 </span>
-                <span class="contact-item-text">
-                  <span class="contact-item-value">LinkedIn</span>
+                <span>
+                  <span class="contact-item-label">LinkedIn</span>
+                  <span class="contact-item-value">yashdoshi8</span>
                 </span>
               </a>
             </div>
@@ -585,34 +676,37 @@
             <h3>Send a message</h3>
             <label>
               Name
-              <input type="text" name="name" required />
+              <input type="text" name="name" required placeholder="Your name" />
             </label>
             <label>
               Email
-              <input type="email" name="email" required />
+              <input type="email" name="email" required placeholder="your@email.com" />
             </label>
             <label>
               Subject
-              <input type="text" name="subject" required />
+              <input type="text" name="subject" required placeholder="What's this about?" />
             </label>
             <label>
               Message
-              <textarea name="message" rows="5" required></textarea>
+              <textarea name="message" rows="5" required placeholder="Tell me more..."></textarea>
             </label>
-            <button class="btn btn-primary" type="submit">Submit Form</button>
+            <button class="btn btn-primary" type="submit">Send Message</button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
+
     </main>
 
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
     <footer class="site-footer">
-      <p>© <span id="year"></span> Built with ❤️ by Yash Doshi</p>
-      <a href="#top">Back to top</a>
+      <p>© <span id="year"></span> Yash Doshi — Built with care.</p>
+      <a href="#top">Back to top ↑</a>
     </footer>
 
+    <!-- ═══════════════════════════════ CHATBOT ═══════════════════════════════ -->
     <div class="chat-nudge" id="chat-nudge" aria-live="polite">
-      Hi, I&apos;m Jarvis. Ask me anything about Yash.
+      Hi, I'm Jarvis. Ask me anything about Yash.
     </div>
 
     <button class="chat-launcher" id="chat-launcher" type="button" aria-label="Open Jarvis assistant">
@@ -627,7 +721,7 @@
           <h3>Jarvis</h3>
           <p>Portfolio AI Assistant</p>
         </div>
-        <button class="chatbot-close" id="chatbot-close" type="button" aria-label="Close assistant">×</button>
+        <button class="chatbot-close" id="chatbot-close" type="button" aria-label="Close assistant">✕</button>
       </div>
 
       <div class="chatbot-prompts" id="chatbot-prompts">
@@ -643,11 +737,11 @@
       <div class="chatbot-messages" id="chatbot-messages"></div>
 
       <form class="chatbot-input-row" id="chatbot-form">
-        <input id="chatbot-input" type="text" placeholder="Ask me anything about Yash..." />
-        <button type="submit" class="btn btn-primary">Ask</button>
+        <input id="chatbot-input" type="text" placeholder="Ask me anything about Yash…" />
+        <button type="submit" class="btn btn-primary">Send</button>
       </form>
     </aside>
 
-    <script src="./script.js?v=20260308-4"></script>
+    <script src="./script.js?v=20260418"></script>
   </body>
 </html>
