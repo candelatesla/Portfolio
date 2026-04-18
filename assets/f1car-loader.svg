@@ -1,0 +1,380 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 145" role="img" aria-label="Formula 1 car side profile">
+  <defs>
+    <!-- Body: strong top highlight, deep underside -->
+    <linearGradient id="g_body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#ff4433"/>
+      <stop offset="0.38" stop-color="#e10600"/>
+      <stop offset="1"    stop-color="#3c0000"/>
+    </linearGradient>
+    <!-- Airbox/engine cover: radial highlight -->
+    <radialGradient id="g_cover" cx="0.42" cy="0.12" r="0.82">
+      <stop offset="0"    stop-color="#ff5544"/>
+      <stop offset="0.55" stop-color="#dd0400"/>
+      <stop offset="1"    stop-color="#680000"/>
+    </radialGradient>
+    <!-- Nose cone darkens toward tip -->
+    <linearGradient id="g_nose" x1="1" y1="0" x2="0" y2="0.25">
+      <stop offset="0"   stop-color="#8a0000"/>
+      <stop offset="0.4" stop-color="#bb0000"/>
+      <stop offset="1"   stop-color="#e00000"/>
+    </linearGradient>
+    <!-- Carbon wing elements -->
+    <linearGradient id="g_wing" x1="0" y1="0" x2="0.1" y2="1">
+      <stop offset="0" stop-color="#252840"/>
+      <stop offset="1" stop-color="#05060b"/>
+    </linearGradient>
+    <!-- Tyre rubber -->
+    <radialGradient id="g_tyre" cx="0.36" cy="0.36" r="0.68">
+      <stop offset="0"    stop-color="#3a3e54"/>
+      <stop offset="0.65" stop-color="#181a24"/>
+      <stop offset="1"    stop-color="#07080d"/>
+    </radialGradient>
+    <!-- Wheel rim -->
+    <radialGradient id="g_rim" cx="0.30" cy="0.30" r="0.72">
+      <stop offset="0"   stop-color="#54587a"/>
+      <stop offset="0.5" stop-color="#282b40"/>
+      <stop offset="1"   stop-color="#10111c"/>
+    </radialGradient>
+    <!-- Floor / underside -->
+    <linearGradient id="g_floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c0000"/>
+      <stop offset="1" stop-color="#020202"/>
+    </linearGradient>
+    <!-- Sidepod top panel -->
+    <linearGradient id="g_sidepod" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#ff3522" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#900000" stop-opacity="0.05"/>
+    </linearGradient>
+    <!-- Speed-line motion blur -->
+    <filter id="f_blur" x="-60%" y="-20%" width="220%" height="140%">
+      <feGaussianBlur stdDeviation="9 0.6"/>
+    </filter>
+    <!-- Subtle drop shadow under car -->
+    <filter id="f_shadow" x="-5%" y="-5%" width="115%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── SPEED TRAIL ──────────────────────────── -->
+  <g filter="url(#f_blur)" opacity="0.52">
+    <rect x="0" y="44"  width="84"  height="3.5" fill="#ff3020"/>
+    <rect x="0" y="56"  width="62"  height="2"   fill="#e10600"/>
+    <rect x="0" y="68"  width="105" height="4"   fill="#ff4030"/>
+    <rect x="0" y="80"  width="74"  height="2.5" fill="#dd0000"/>
+    <rect x="0" y="90"  width="52"  height="2"   fill="#bb0000"/>
+    <rect x="0" y="100" width="82"  height="2"   fill="#990000"/>
+    <rect x="0" y="110" width="40"  height="1.5" fill="#770000"/>
+    <rect x="0" y="118" width="58"  height="1"   fill="#550000"/>
+  </g>
+
+  <g filter="url(#f_shadow)">
+
+  <!-- ═══════════════════════════════════════════
+       REAR WING ASSEMBLY
+  ═══════════════════════════════════════════ -->
+  <!-- Outer endplates -->
+  <path d="M 14 12 C 14 12,17 12,18 14 L 18 98 L 14 98 Z" fill="#0e0f1a"/>
+  <path d="M 76 12 C 76 12,73 12,72 14 L 72 98 L 76 98 Z" fill="#0e0f1a"/>
+
+  <!-- DRS upper flap -->
+  <path d="M 14 12 L 76 12 L 76 19 L 14 19 Z" fill="#11131e" rx="1"/>
+  <!-- Trailing edge of DRS flap detail -->
+  <line x1="76" y1="19" x2="14" y2="19" stroke="#080910" stroke-width="1"/>
+
+  <!-- Main rear wing element -->
+  <path d="M 14 21 L 76 21 L 76 31 L 14 31 Z" fill="url(#g_wing)"/>
+  <!-- Gurney flap line on trailing edge -->
+  <rect x="14" y="30" width="62" height="1.5" fill="#06070c"/>
+
+  <!-- Wing mounting struts (swan neck) -->
+  <path d="M 42 31 C 42 36,40 42,38 52 L 42 52 C 41 42,43 36,44 31 Z" fill="#0a0b14"/>
+  <path d="M 48 31 C 48 36,50 42,52 52 L 48 52 C 47 42,47 36,46 31 Z" fill="#0a0b14"/>
+
+  <!-- Beam wing (lower element between main wing and diffuser) -->
+  <path d="M 26 42 L 64 42 L 64 48 L 26 48 Z" fill="#121522"/>
+  <path d="M 28 50 L 62 50 L 62 55 L 28 55 Z" fill="#0d0e18"/>
+
+  <!-- Endplate louvre detail lines -->
+  <g stroke="#1a1d2c" stroke-width="0.9" opacity="0.85">
+    <line x1="16" y1="32" x2="16" y2="94"/>
+    <line x1="18" y1="32" x2="18" y2="94"/>
+    <line x1="72" y1="32" x2="72" y2="94"/>
+    <line x1="74" y1="32" x2="74" y2="94"/>
+  </g>
+  <!-- Inner coloured face on endplates (slight red) -->
+  <path d="M 18 22 L 22 22 L 22 94 L 18 94 Z" fill="rgba(220,5,0,0.24)"/>
+  <path d="M 68 22 L 72 22 L 72 94 L 68 94 Z" fill="rgba(220,5,0,0.18)"/>
+
+  <!-- ═══════════════════════════════════════════
+       REAR TYRE
+  ═══════════════════════════════════════════ -->
+  <!-- Tyre outer -->
+  <circle cx="107" cy="110" r="32" fill="url(#g_tyre)"/>
+  <!-- Tyre sidewall detail rings -->
+  <circle cx="107" cy="110" r="32" fill="none" stroke="#1e2132" stroke-width="1.5"/>
+  <circle cx="107" cy="110" r="27" fill="none" stroke="#131420" stroke-width="0.7"/>
+  <!-- Manufacturer lettering band (dashed ring simulation) -->
+  <circle cx="107" cy="110" r="30" fill="none" stroke="#191c2a" stroke-width="5" stroke-dasharray="10 5"/>
+  <!-- Tyre contact patch shadow -->
+  <ellipse cx="107" cy="141" rx="30" ry="4" fill="rgba(0,0,0,0.45)"/>
+  <!-- Rim -->
+  <circle cx="107" cy="110" r="22" fill="url(#g_rim)"/>
+  <circle cx="107" cy="110" r="22" fill="none" stroke="#2c2f48" stroke-width="1"/>
+  <!-- 5-spoke alloy wheel -->
+  <g transform="translate(107,110)">
+    <g stroke="#282b42" stroke-width="3" fill="none" stroke-linecap="round">
+      <line x1="0"   y1="-20" x2="0"   y2="20"/>
+      <line x1="-19" y1="-6"  x2="19"  y2="6"/>
+      <line x1="-19" y1="6"   x2="19"  y2="-6"/>
+      <line x1="-12" y1="-17" x2="12"  y2="17"/>
+      <line x1="12"  y1="-17" x2="-12" y2="17"/>
+    </g>
+    <!-- Spoke highlight edges -->
+    <g stroke="#363a58" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5">
+      <line x1="0"   y1="-20" x2="0"   y2="20"/>
+      <line x1="-19" y1="-6"  x2="19"  y2="6"/>
+      <line x1="-19" y1="6"   x2="19"  y2="-6"/>
+    </g>
+    <!-- Brake disc (inner, slightly warm) -->
+    <circle cx="0" cy="0" r="15" fill="#0f0c0a" stroke="#1e1208" stroke-width="3"/>
+    <!-- Brake caliper (small blob) -->
+    <rect x="11" y="-5" width="6" height="10" rx="2" fill="#cc3300" opacity="0.8"/>
+    <!-- Center lock nut -->
+    <circle cx="0" cy="0" r="6.5" fill="#e10600"/>
+    <circle cx="0" cy="0" r="4"   fill="#a00000"/>
+    <!-- Octagonal detail -->
+    <polygon points="0,-5.5 3.9,-3.9 5.5,0 3.9,3.9 0,5.5 -3.9,3.9 -5.5,0 -3.9,-3.9"
+             fill="none" stroke="#c80000" stroke-width="0.8" opacity="0.6"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       DIFFUSER
+  ═══════════════════════════════════════════ -->
+  <path d="M 80 94 C 82 90,86 88,92 88 L 138 88 C 138 88,140 92,138 98 L 86 98 C 84 98,80 96,80 94 Z"
+        fill="#04050a"/>
+  <!-- Diffuser vertical fins -->
+  <g stroke="#0d0e18" stroke-width="1.5">
+    <line x1="95"  y1="90" x2="95"  y2="98"/>
+    <line x1="103" y1="89" x2="103" y2="98"/>
+    <line x1="111" y1="89" x2="111" y2="98"/>
+    <line x1="119" y1="89" x2="119" y2="98"/>
+    <line x1="127" y1="89" x2="127" y2="98"/>
+    <line x1="135" y1="89" x2="135" y2="98"/>
+  </g>
+  <!-- Diffuser highlight at top edge -->
+  <line x1="80" y1="88" x2="140" y2="88" stroke="#1a1c2e" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN BODY
+  ═══════════════════════════════════════════ -->
+  <!--
+    Body profile (clockwise from rear top):
+    Rear:        x≈84,  y≈88
+    Over arch:   x≈120, y≈48
+    Engine peak: x≈196, y≈28
+    Cockpit:     x≈238, y≈52
+    Sidepod:     x≈300, y≈55
+    Nose start:  x≈375, y≈72
+    Nose tip:    x≈540, y≈98
+    Floor:       y≈102
+  -->
+  <!-- Body silhouette -->
+  <path d="
+    M 84 88
+    C 88 76,96 62,114 50
+    C 130 40,155 33,178 29
+    C 190 27,198 26,208 27
+    C 216 28,224 34,230 46
+    L 236 54
+    L 244 52
+    C 252 50,264 48,276 48
+    L 282 50
+    C 292 52,310 58,335 68
+    C 358 76,392 86,432 94
+    C 462 100,498 104,534 106
+    L 540 100
+    C 520 96,490 90,458 84
+    C 428 78,396 72,368 68
+    C 344 64,318 62,298 60
+    L 280 58
+    L 270 56
+    L 258 56
+    L 248 58
+    L 238 60
+    L 232 52
+    L 228 44
+    C 224 36,218 31,208 30
+    C 196 29,178 31,158 36
+    C 136 41,114 50,102 58
+    C 92 64,84 74,82 84
+    Z"
+    fill="url(#g_body)"/>
+
+  <!-- Engine cover / airbox highlight (top radial highlight on hump) -->
+  <path d="
+    M 162 36
+    C 175 30,190 27,204 27
+    C 216 27,224 31,228 40
+    L 228 44
+    C 220 36,212 32,202 31
+    C 190 30,176 33,164 40
+    Z"
+    fill="rgba(255,100,80,0.28)"/>
+
+  <!-- Sidepod top surface highlight -->
+  <path d="
+    M 286 52
+    C 305 54,328 62,350 72
+    L 376 80
+    C 356 74,330 66,306 60
+    L 288 56
+    Z"
+    fill="url(#g_sidepod)"/>
+
+  <!-- Sidepod leading edge / inlet highlight (teal-ish) -->
+  <path d="M 294 52 L 298 52 L 304 80 L 298 80 Z" fill="rgba(0,160,180,0.3)"/>
+
+  <!-- Cockpit surround detail -->
+  <path d="M 236 54 C 238 50,244 48,252 48 L 270 48 C 278 48,282 50,284 54 L 284 58 L 236 58 Z"
+        fill="#0a0b14"/>
+  <!-- Cockpit padding / carbon rim -->
+  <path d="M 238 54 C 240 50,246 48,252 48 L 270 48 C 276 48,280 50,282 54 L 282 56 L 238 56 Z"
+        fill="#14162a"/>
+  <!-- Cockpit interior -->
+  <path d="M 240 56 L 280 56 L 278 64 L 242 64 Z" fill="#06070c"/>
+
+  <!-- Halo safety device -->
+  <path d="M 238 56 C 242 38,270 38,278 56"
+        fill="none" stroke="#08090e" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 240 56 C 244 41,268 41,276 56"
+        fill="none" stroke="#12142c" stroke-width="5" stroke-linecap="round"/>
+  <!-- Halo highlight line -->
+  <path d="M 244 48 C 252 38,264 38,272 48"
+        fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Airbox intake opening -->
+  <path d="M 212 28 C 216 26,224 26,228 28 L 230 36 C 226 32,218 32,214 36 Z"
+        fill="#06070c"/>
+  <path d="M 214 29 C 218 27,224 27,227 29 L 229 33 C 225 30,219 30,215 33 Z"
+        fill="#0c0e20"/>
+
+  <!-- Nosecone: separate darker gradient for nose taper section -->
+  <path d="
+    M 376 70
+    C 400 78,430 88,464 96
+    C 492 102,514 106,536 106
+    L 540 100
+    C 516 96,492 90,462 84
+    C 428 76,398 68,374 62
+    Z"
+    fill="url(#g_nose)"/>
+
+  <!-- Side number / livery stripe on body -->
+  <path d="M 150 52 L 290 52 L 290 56 L 152 56 Z" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Floor / plank underside -->
+  <path d="M 86 98 L 370 98 L 390 102 L 86 102 Z" fill="url(#g_floor)"/>
+  <!-- Floor edge detail -->
+  <line x1="86" y1="98" x2="390" y2="98" stroke="#1c1e30" stroke-width="0.8"/>
+
+  <!-- Floor edge winglet / duct (between front and rear wheels) -->
+  <path d="M 200 98 L 210 88 L 220 88 L 222 98 Z" fill="#0d0e18"/>
+  <path d="M 270 98 L 278 90 L 286 90 L 288 98 Z" fill="#0d0e18"/>
+
+  <!-- Body left-edge shading (depth) -->
+  <path d="
+    M 84 88
+    C 88 76,96 62,114 50
+    C 120 46,126 44,130 44
+    C 118 50,106 60,98 72
+    C 92 80,86 88,84 96
+    Z"
+    fill="rgba(0,0,0,0.32)"/>
+
+  <!-- ═══════════════════════════════════════════
+       DRIVER HELMET
+  ═══════════════════════════════════════════ -->
+  <ellipse cx="259" cy="46" rx="19" ry="14" fill="#e10600"/>
+  <ellipse cx="259" cy="46" rx="14" ry="9"  fill="#060810"/>
+  <!-- Visor reflection -->
+  <path d="M 248 42 L 264 42 L 268 50 L 248 50 Z" fill="rgba(0,180,210,0.52)"/>
+  <!-- Helmet livery stripe -->
+  <path d="M 244 40 C 246 36,262 34,272 38 L 270 42 C 260 38,248 40,246 44 Z"
+        fill="rgba(255,255,255,0.22)"/>
+
+  <!-- ═══════════════════════════════════════════
+       FRONT TYRE
+  ═══════════════════════════════════════════ -->
+  <!-- Tyre outer -->
+  <circle cx="432" cy="112" r="27" fill="url(#g_tyre)"/>
+  <circle cx="432" cy="112" r="27" fill="none" stroke="#1e2132" stroke-width="1.2"/>
+  <circle cx="432" cy="112" r="23" fill="none" stroke="#131420" stroke-width="0.6"/>
+  <circle cx="432" cy="112" r="25" fill="none" stroke="#191c2a" stroke-width="4" stroke-dasharray="9 4"/>
+  <!-- Shadow -->
+  <ellipse cx="432" cy="139" rx="25" ry="3.5" fill="rgba(0,0,0,0.4)"/>
+  <!-- Rim -->
+  <circle cx="432" cy="112" r="18" fill="url(#g_rim)"/>
+  <circle cx="432" cy="112" r="18" fill="none" stroke="#2c2f48" stroke-width="0.8"/>
+  <!-- Front wheel spokes -->
+  <g transform="translate(432,112)">
+    <g stroke="#282b42" stroke-width="2.5" fill="none" stroke-linecap="round">
+      <line x1="0"   y1="-16" x2="0"   y2="16"/>
+      <line x1="-15" y1="-5"  x2="15"  y2="5"/>
+      <line x1="-15" y1="5"   x2="15"  y2="-5"/>
+      <line x1="-10" y1="-13" x2="10"  y2="13"/>
+      <line x1="10"  y1="-13" x2="-10" y2="13"/>
+    </g>
+    <!-- Brake disc -->
+    <circle cx="0" cy="0" r="12" fill="#0e0b0a" stroke="#1c1008" stroke-width="2.5"/>
+    <!-- Brake caliper -->
+    <rect x="9" y="-4" width="5" height="8" rx="2" fill="#cc3300" opacity="0.8"/>
+    <!-- Center lock nut -->
+    <circle cx="0" cy="0" r="5.5" fill="#e10600"/>
+    <circle cx="0" cy="0" r="3.2" fill="#a00000"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════
+       FRONT SUSPENSION + WING PYLONS
+  ═══════════════════════════════════════════ -->
+  <!-- Upper wishbone -->
+  <path d="M 375 86 C 395 90,415 96,432 94 L 432 96 C 415 98,394 94,374 90 Z"
+        fill="#111420"/>
+  <!-- Lower wishbone -->
+  <path d="M 375 94 C 396 100,418 108,432 108 L 432 110 C 418 110,396 102,374 96 Z"
+        fill="#0d0e18"/>
+  <!-- Pull rod -->
+  <line x1="390" y1="88" x2="432" y2="100" stroke="#0d0e18" stroke-width="1.5"/>
+
+  <!-- ═══════════════════════════════════════════
+       FRONT WING ASSEMBLY
+  ═══════════════════════════════════════════ -->
+  <!-- Wing endplates -->
+  <path d="M 377 90 L 382 90 L 382 118 L 377 118 Z" fill="#0d0e18"/>
+  <path d="M 540 90 L 545 90 L 545 118 L 540 118 Z" fill="#0d0e18"/>
+  <!-- Main plate (lowest, widest) -->
+  <path d="M 377 112 L 545 112 L 545 118 L 377 118 Z" fill="url(#g_wing)"/>
+  <!-- Upper element 1 -->
+  <path d="M 388 104 L 534 104 L 534 110 L 388 110 Z" fill="#111522"/>
+  <!-- Upper element 2 -->
+  <path d="M 398 97 L 522 97 L 522 102 L 398 102 Z" fill="#0e0f1a"/>
+  <!-- Upper element 3 (outermost, shortest) -->
+  <path d="M 408 91 L 510 91 L 510 95 L 408 95 Z" fill="#0c0d18"/>
+  <!-- Wing pylon connecting to nose -->
+  <path d="M 460 96 L 468 88 L 474 88 L 474 96 Z" fill="#0a0b14"/>
+  <path d="M 490 96 L 498 88 L 504 88 L 498 96 Z" fill="#0a0b14"/>
+  <!-- Cascade (small outer winglet on endplate) -->
+  <path d="M 380 95 L 386 90 L 388 95 Z" fill="#0e0f1c"/>
+  <path d="M 537 95 L 542 90 L 543 95 Z" fill="#0e0f1c"/>
+  <!-- Front wing tip / nose join -->
+  <path d="M 538 98 C 540 99,540 102,538 104 L 542 104 L 542 98 Z" fill="#0c0000"/>
+
+  <!-- ═══════════════════════════════════════════
+       GROUND / FLOOR SHADOW
+  ═══════════════════════════════════════════ -->
+  <ellipse cx="300" cy="142" rx="240" ry="5" fill="rgba(0,0,0,0.22)"/>
+
+  </g>
+</svg>

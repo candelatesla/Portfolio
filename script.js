@@ -1,4 +1,21 @@
 /* ============================================================
+   PAGE LOADER
+   ============================================================ */
+const pageLoader = document.querySelector("#page-loader");
+if (pageLoader) {
+  // Car animation: 0.55s delay + 1.45s run = 2.0s. Add 0.35s buffer then exit.
+  const exitLoader = () => {
+    pageLoader.classList.add("loader-out");
+    pageLoader.addEventListener("transitionend", () => pageLoader.remove(), { once: true });
+  };
+  if (document.readyState === "complete") {
+    setTimeout(exitLoader, 2350);
+  } else {
+    window.addEventListener("load", () => setTimeout(exitLoader, 2350), { once: true });
+  }
+}
+
+/* ============================================================
    THEME
    ============================================================ */
 const THEME_KEY = "portfolio-theme";
