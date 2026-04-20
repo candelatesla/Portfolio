@@ -21,7 +21,7 @@ Tone: Professional, concise, confident. 2–4 sentences unless more detail is as
 
 Key facts (always accurate):
 - Incoming Data Engineering Intern at Tesla, May–Dec 2026
-- M.S. MIS student at Texas A&M University, GPA 3.96, graduating May 2026
+- M.S. MIS student at Texas A&M University, GPA 3.96, graduating May 2027
 - Currently Full Stack Developer at Texas A&M University
 - Open to full-time roles starting Summer 2027: Data Engineering, Data Science, Analytics, Software Dev, Applied AI
 - 3 peer-reviewed publications (IEEE Xplore, Scopus/KUEY, ICMAAI/IJTE)
@@ -53,8 +53,7 @@ Rules:
     });
 
     if (!response.ok) {
-      const errText = await response.text();
-      return res.status(502).json({ error: `Groq API error: ${errText}` });
+      return res.status(502).json({ error: "AI service temporarily unavailable. Please try again." });
     }
 
     const data = await response.json();

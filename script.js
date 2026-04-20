@@ -62,12 +62,22 @@ if (resumeModal && resumePreviewBtn) {
     document.body.style.overflow = "";
     resumePreviewBtn.focus();
   };
+  const FOCUSABLE = 'a[href],button:not([disabled]),iframe,[tabindex]:not([tabindex="-1"])';
+  const trapFocus = (e) => {
+    if (!resumeModal.classList.contains("open")) return;
+    const els = [...resumeModal.querySelectorAll(FOCUSABLE)];
+    if (!els.length) return;
+    const first = els[0], last = els[els.length - 1];
+    if (e.key === "Tab") {
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    if (e.key === "Escape") closeResume();
+  };
   resumePreviewBtn.addEventListener("click", openResume);
   resumeModalClose?.addEventListener("click", closeResume);
   resumeModalBg?.addEventListener("click", closeResume);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && resumeModal.classList.contains("open")) closeResume();
-  });
+  document.addEventListener("keydown", trapFocus);
 }
 
 /* ============================================================

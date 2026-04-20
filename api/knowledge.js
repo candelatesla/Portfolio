@@ -3,7 +3,7 @@ export const profileDocs = [
     id: "core-profile",
     title: "Yash Doshi — Overview",
     content:
-      "Yash Chetan Doshi is a Master of Information Systems (MIS) student at Texas A&M University (GPA 3.96, graduating May 2026). He is an incoming Data Engineering Intern at Tesla (May–Dec 2026, Summer & Fall). He is currently a Full Stack Developer at Texas A&M University. He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
+      "Yash Chetan Doshi is a Master of Information Systems (MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is an incoming Data Engineering Intern at Tesla (May–Dec 2026, Summer & Fall). He is currently a Full Stack Developer at Texas A&M University. He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
   },
   {
     id: "experience-tesla",
@@ -81,7 +81,7 @@ export const profileDocs = [
     id: "education",
     title: "Education",
     content:
-      "M.S. Management Information Systems (MIS) — Texas A&M University, College Station TX. GPA: 3.96/4.0. Expected May 2026. Focus: AI systems, data engineering, analytics. B.Tech Information Technology — University of Mumbai / DJ Sanghvi College of Engineering (DJSCOE), Mumbai India. CGPA: 9.11/10 (≈3.96/4.0). Graduated 2024.",
+      "M.S. Management Information Systems (MIS) — Texas A&M University, College Station TX. GPA: 3.96/4.0. Expected May 2027. Focus: AI systems, data engineering, analytics. B.Tech Information Technology — University of Mumbai / DJ Sanghvi College of Engineering (DJSCOE), Mumbai India. CGPA: 9.11/10 (≈3.96/4.0). Graduated May 2025.",
   },
   {
     id: "leadership",
