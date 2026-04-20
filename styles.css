@@ -353,8 +353,8 @@ a { color: inherit; }
 }
 
 .mode-toggle-btn {
-  width: 40px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: rgba(255,255,255,0.03);
@@ -507,8 +507,8 @@ h1 {
 }
 
 .icon-link {
-  width: 40px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -651,12 +651,13 @@ h2 {
   gap: 0.4rem;
   border: 0;
   border-radius: var(--radius-sm);
-  padding: 0.65rem 1.1rem;
+  padding: 0.75rem 1.1rem;
   font: inherit;
   font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
+  min-height: 44px;
   transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
 }
 
@@ -1144,8 +1145,8 @@ h2 {
 }
 
 .contact-item-icon {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
   border-radius: var(--radius-sm);
   display: inline-flex;
@@ -1379,9 +1380,10 @@ input:focus, textarea:focus {
   border-radius: var(--radius-pill);
   background: rgba(255,255,255,0.03);
   color: var(--muted);
-  padding: 0.3rem 0.65rem;
+  padding: 0.5rem 0.75rem;
   font: inherit;
   font-size: 0.79rem;
+  min-height: 36px;
   cursor: pointer;
   transition: border-color 0.18s, color 0.18s, background 0.18s;
 }
@@ -1584,6 +1586,28 @@ body[data-theme="light"] .contact-item-icon svg { fill: var(--muted); }
   }
 
   h1 { letter-spacing: -0.02em; }
+}
+
+@media (max-width: 480px) {
+  .avatar-wrap { width: 160px; height: 160px; }
+
+  .chat-launcher {
+    width: 46px;
+    height: 46px;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .chatbot-panel {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    max-height: 80vh;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .chat-nudge { right: 1rem; }
 }
 
 /* ============================================================
