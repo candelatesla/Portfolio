@@ -1246,6 +1246,49 @@ input:focus, textarea:focus {
 
 .site-footer a:hover { color: var(--text); }
 
+.f1-tooltip {
+  position: relative;
+  cursor: default;
+  display: inline-block;
+  margin-left: 0.2rem;
+}
+
+.f1-tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid rgba(229,24,26,0.35);
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.f1-tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(229,24,26,0.35);
+}
+
+.f1-tooltip:hover .f1-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ============================================================
    SCROLL REVEAL
    ============================================================ */
