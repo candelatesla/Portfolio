@@ -293,22 +293,29 @@ a { color: inherit; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   text-decoration: none;
   color: var(--text);
-  font-family: "Sora", sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
 }
 
-.brand-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+.brand-plate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--red);
-  box-shadow: 0 0 10px rgba(229, 24, 26, 0.7);
-  flex-shrink: 0;
+  color: #fff;
+  font-family: "Sora", sans-serif;
+  font-weight: 900;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem 0.3rem 0.65rem;
+  border-radius: 5px;
+  clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);
+  box-shadow: 0 0 14px rgba(229,24,26,0.45);
+  transition: box-shadow 0.2s;
+}
+
+.brand:hover .brand-plate {
+  box-shadow: 0 0 22px rgba(229,24,26,0.7);
 }
 
 .nav {
@@ -406,7 +413,8 @@ main {
   grid-template-columns: 1fr 380px;
   gap: 3rem;
   align-items: center;
-  padding: 6rem 0 4rem;
+  min-height: calc(100vh - 72px);
+  padding: 3rem 0;
   position: relative;
 }
 
@@ -565,6 +573,12 @@ h1 {
 .avatar-wrap svg {
   width: 100%;
   height: 100%;
+  animation: avatar-float 3.5s ease-in-out infinite;
+}
+
+@keyframes avatar-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
 }
 
 /* Subtle glow ring behind avatar */
@@ -925,6 +939,12 @@ h2 {
   transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s, opacity 0.22s;
 }
 
+.project-card:hover {
+  border-color: rgba(229,24,26,0.45);
+  box-shadow: 0 0 0 1px rgba(229,24,26,0.15), 0 12px 40px rgba(229,24,26,0.12), 0 8px 24px rgba(0,0,0,0.4);
+  transform: translateY(-6px);
+}
+
 .project-card p {
   color: var(--muted);
   font-size: 0.93rem;
@@ -967,40 +987,50 @@ h2 {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.4rem 0;
+  padding: 1.5rem 1rem 1.5rem 1.25rem;
   border-bottom: 1px solid var(--line);
-  transition: none;
+  border-left: 3px solid transparent;
+  border-radius: 0 8px 8px 0;
+  transition: border-color 0.2s, background 0.2s;
+  margin-left: -1.25rem;
 }
 
 .research-item:last-child { border-bottom: none; }
 
+.research-item:hover {
+  border-left-color: var(--red);
+  background: rgba(229,24,26,0.04);
+}
+
 .research-item:hover .research-meta h3 { color: var(--red); }
 
 .research-meta h3 {
-  margin: 0 0 0.35rem;
-  font-size: 0.97rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.45;
   transition: color 0.18s;
 }
 
-.research-meta p { margin: 0; font-size: 0.88rem; color: var(--muted); }
-.research-meta p + p { margin-top: 0.4rem; }
+.research-meta p { margin: 0; font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
+.research-meta p + p { margin-top: 0.5rem; }
 
 .research-venue {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.73rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
-  background: var(--surface-2);
-  border: 1px solid var(--line);
   border-radius: var(--radius-pill);
-  padding: 0.2rem 0.55rem;
+  padding: 0.22rem 0.6rem;
 }
+
+/* Per-venue colour coding */
+.research-venue.ieee   { color: #00c0d4; background: rgba(0,192,212,0.1);  border: 1px solid rgba(0,192,212,0.25); }
+.research-venue.scopus { color: #f59e0b; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); }
+.research-venue.conf   { color: var(--red); background: var(--red-glow);  border: 1px solid rgba(229,24,26,0.3); }
 
 /* ============================================================
    SKILLS
@@ -1013,11 +1043,20 @@ h2 {
 
 .skill-card h3 {
   margin-bottom: 0.9rem;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-icon {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  flex-shrink: 0;
 }
 
 .skill-tags {
