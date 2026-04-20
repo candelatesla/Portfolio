@@ -162,7 +162,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore Projects</a>
             <a class="btn btn-outline" href="#contact">Let's Connect</a>
-            <a class="btn btn-outline" href="./assets/Yash_Doshi_Resume.pdf" download>Resume ↓</a>
+            <button class="btn btn-outline" id="resume-preview-btn">Resume ↗</button>
           </div>
 
           <div class="social-row">
@@ -466,7 +466,7 @@
               <p>Explored XAI methods for diabetes prediction to improve model transparency and trust in healthcare decision support.</p>
               <p><span class="research-venue">ICMAAI-25 · June 2025</span></p>
             </div>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/yashdoshi8/details/projects/1750089808670/single-media-viewer/?profileId=ACoAADk1mBsBaP3tyjNDk63VVJSVnG2LiEUh8qM" target="_blank" rel="noreferrer">View ↗</a>
+            <a class="btn btn-ghost" href="https://www.ijteonline.in/assets/uploads/issue_pdf/1772469849.pdf" target="_blank" rel="noreferrer">Read Paper ↗</a>
           </article>
 
           <article class="research-item">
@@ -475,7 +475,7 @@
               <p>Integrated augmented reality into exposure therapy to improve patient engagement, personalization, and treatment outcomes.</p>
               <p><span class="research-venue">IEEE Xplore · April 2025</span></p>
             </div>
-            <a class="btn btn-ghost" href="https://ieeexplore.ieee.org/document/10960229" target="_blank" rel="noreferrer">View ↗</a>
+            <a class="btn btn-ghost" href="https://ieeexplore.ieee.org/document/10960229" target="_blank" rel="noreferrer">Read Paper ↗</a>
           </article>
 
           <article class="research-item">
@@ -484,7 +484,7 @@
               <p>Benchmarked YOLO variants across precision, recall, runtime, and usability for practical object detection deployment.</p>
               <p><span class="research-venue">Scopus-indexed · April 2024</span></p>
             </div>
-            <a class="btn btn-ghost" href="https://kuey.net/index.php/kuey/article/view/7025" target="_blank" rel="noreferrer">View ↗</a>
+            <a class="btn btn-ghost" href="https://kuey.net/index.php/kuey/article/view/7025" target="_blank" rel="noreferrer">Read Paper ↗</a>
           </article>
 
         </div>
@@ -807,5 +807,24 @@
     </aside>
 
     <script src="./script.js?v=20260418"></script>
+  <!-- ── RESUME MODAL ─────────────────────────────────────── -->
+  <div id="resume-modal" class="resume-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Resume Preview">
+    <div class="resume-modal-backdrop" id="resume-modal-backdrop"></div>
+    <div class="resume-modal-panel">
+      <div class="resume-modal-header">
+        <span class="resume-modal-title">Yash Doshi &mdash; Resume</span>
+        <div class="resume-modal-actions">
+          <a href="./assets/Yash_Doshi_Resume.pdf" download class="btn btn-primary btn-sm">Download ↓</a>
+          <button id="resume-modal-close" aria-label="Close resume preview">✕</button>
+        </div>
+      </div>
+      <iframe
+        src="./assets/Yash_Doshi_Resume.pdf#toolbar=0&navpanes=0"
+        title="Yash Doshi Resume"
+        class="resume-modal-frame"
+      ></iframe>
+    </div>
+  </div>
+
   </body>
 </html>

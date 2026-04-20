@@ -1557,3 +1557,93 @@ body[data-theme="light"] .contact-item-icon svg { fill: var(--muted); }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ── RESUME MODAL ──────────────────────────────────────────── */
+.resume-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+.resume-modal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.resume-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.resume-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 880px);
+  height: min(92vh, 1080px);
+  background: var(--surface-1);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.55);
+  transform: translateY(24px) scale(0.98);
+  transition: transform 0.3s cubic-bezier(0.34,1.4,0.64,1);
+}
+.resume-modal.open .resume-modal-panel {
+  transform: translateY(0) scale(1);
+}
+.resume-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  background: var(--surface-2);
+  flex-shrink: 0;
+}
+.resume-modal-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.01em;
+}
+.resume-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.btn-sm {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+}
+.resume-modal-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+.resume-modal-actions button:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--fg);
+}
+.resume-modal-frame {
+  flex: 1;
+  border: none;
+  width: 100%;
+  background: #fff;
+}

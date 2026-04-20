@@ -42,6 +42,35 @@ if (themeToggleBtn) {
 }
 
 /* ============================================================
+   RESUME MODAL
+   ============================================================ */
+const resumeModal       = document.querySelector("#resume-modal");
+const resumeModalClose  = document.querySelector("#resume-modal-close");
+const resumeModalBg     = document.querySelector("#resume-modal-backdrop");
+const resumePreviewBtn  = document.querySelector("#resume-preview-btn");
+
+if (resumeModal && resumePreviewBtn) {
+  const openResume = () => {
+    resumeModal.classList.add("open");
+    resumeModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    resumeModalClose?.focus();
+  };
+  const closeResume = () => {
+    resumeModal.classList.remove("open");
+    resumeModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    resumePreviewBtn.focus();
+  };
+  resumePreviewBtn.addEventListener("click", openResume);
+  resumeModalClose?.addEventListener("click", closeResume);
+  resumeModalBg?.addEventListener("click", closeResume);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && resumeModal.classList.contains("open")) closeResume();
+  });
+}
+
+/* ============================================================
    CURSOR GLOW
    ============================================================ */
 const cursorGlow = document.querySelector(".cursor-glow");
