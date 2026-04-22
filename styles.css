@@ -814,6 +814,8 @@ h2 {
   height: 82%;
   object-fit: contain;
   border-radius: 6px;
+  filter: brightness(0) invert(1);
+  opacity: 0.82;
 }
 
 .org-logo.is-hidden { display: none; }
