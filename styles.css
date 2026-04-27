@@ -218,6 +218,23 @@
 
 html { scroll-behavior: smooth; }
 
+/* ============================================================
+   SCROLL PROGRESS BAR — F1 lap indicator
+   ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #e5181a 0%, #ff4d4f 60%, #ffb400 100%);
+  z-index: 10000;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.08s linear;
+  pointer-events: none;
+  box-shadow: 0 0 8px rgba(229, 24, 26, 0.6);
+}
+
 body {
   margin: 0;
   font-family: "Space Grotesk", system-ui, sans-serif;
