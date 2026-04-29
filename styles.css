@@ -967,7 +967,7 @@ h2 {
   color: var(--muted);
   font-size: 0.93rem;
   line-height: 1.55;
-  margin-bottom: 0.8rem;
+  margin: 0 0 0.8rem;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
