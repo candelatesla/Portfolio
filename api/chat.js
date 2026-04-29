@@ -1,4 +1,4 @@
-import { retrieveContext } from "../lib/knowledge.js";
+import { retrieveContext } from "./knowledge.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
