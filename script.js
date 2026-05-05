@@ -172,7 +172,7 @@ const sectionObserver = new IntersectionObserver(
       });
     });
   },
-  { threshold: 0.45 }
+  { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
 );
 
 sectionIds.forEach((id) => {
@@ -245,9 +245,11 @@ if (form && statusEl) {
       });
       if (!res.ok) throw new Error();
       form.reset();
-      statusEl.textContent = "Message sent — thanks!";
+      statusEl.textContent = "Message sent · thanks!";
+      setTimeout(() => { statusEl.textContent = ""; }, 5000);
     } catch {
       statusEl.textContent = "Couldn't send right now. Email me directly at yash.doshi@tamu.edu";
+      setTimeout(() => { statusEl.textContent = ""; }, 7000);
     }
   });
 }
@@ -290,6 +292,14 @@ const knowledgeBase = [
     details: "Jul 2024 – Oct 2024, Mumbai, India.",
     source: "Website + resume",
     keywords: ["acma", "data analyst", "intern", "python", "sql", "dashboard"],
+  },
+  {
+    type: "experience",
+    title: "C-DAC India — Software Developer Intern",
+    summary: "Built a ReactJS + Rive virtual science simulator deployed on Vidyakash, reaching 2M+ high school students across India.",
+    details: "Dec 2023 – May 2024, Mumbai, India. Hosted on AWS EC2.",
+    source: "Website experience section",
+    keywords: ["cdac", "c-dac", "software developer", "intern", "reactjs", "rive", "vidyakash", "simulator", "2 million"],
   },
   {
     type: "experience",
@@ -453,6 +463,7 @@ if (chatLauncher && chatbotPanel && chatbotClose && chatbotForm && chatbotInput)
   chatbotClose.addEventListener("click", () => {
     chatbotPanel.classList.remove("open");
     chatbotPanel.setAttribute("aria-hidden", "true");
+    chatLauncher.focus();
   });
 
   chatPromptButtons.forEach((btn) => {
@@ -470,12 +481,21 @@ if (chatLauncher && chatbotPanel && chatbotClose && chatbotForm && chatbotInput)
     chatHistory.push({ role: "user", content: query });
     chatbotInput.value = "";
     isTyping = true;
+
+    // Thinking indicator
+    const thinkingBubble = document.createElement("div");
+    thinkingBubble.className = "chat-msg bot chat-thinking";
+    thinkingBubble.textContent = "Thinking…";
+    chatbotMessages.appendChild(thinkingBubble);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
     let answer = "";
     try {
       answer = await getApiAnswer(query);
     } catch {
       answer = answerFromKnowledge(query);
     }
+    thinkingBubble.remove();
     await typeChatMessage(answer);
     chatHistory.push({ role: "assistant", content: answer });
     isTyping = false;

@@ -1,73 +1,79 @@
 export const profileDocs = [
   {
     id: "core-profile",
-    title: "Yash Doshi — Overview",
+    title: "Yash Doshi - Overview",
     content:
-      "Yash Chetan Doshi is a Master of Information Systems (MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is an incoming Data Engineering Intern at Tesla (May–Dec 2026, Summer & Fall). He is currently a Full Stack Developer at Texas A&M University. He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
+      "Yash Chetan Doshi is a Master of Science in Management Information Systems (MS MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is an incoming Data Engineering Intern at Tesla (May-Dec 2026). He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
   },
   {
     id: "experience-tesla",
-    title: "Experience — Tesla, Data Engineering Intern",
+    title: "Experience - Tesla, Data Engineering Intern",
     content:
-      "Incoming Data Engineering Intern at Tesla. Duration: Summer & Fall 2026, May through December 2026. One of the most competitive tech internships globally — joining the data engineering org.",
+      "Incoming Data Engineering Intern at Tesla. Duration: May through December 2026, Palo Alto, CA. One of the most competitive tech internships globally - joining the data engineering org at Tesla.",
   },
   {
     id: "experience-tamu",
-    title: "Experience — Texas A&M University, Full Stack Developer",
+    title: "Experience - Texas A&M University, Full Stack Developer",
     content:
-      "Full Stack Developer at Texas A&M University, College Station, TX. Current role. Develops and maintains full-stack features for student-facing and internal university platforms. Owns implementation across frontend, backend APIs, and database layers for stable delivery. Collaborates with stakeholders to prioritize, ship, and iterate features based on real-world usage data.",
+      "Full Stack Developer at Texas A&M University, College Station, TX. January 2026 to May 2026. Developed and maintained full-stack web applications and a teacher-facing dashboard for student and faculty data management. Designed relational and NoSQL (MongoDB) databases. Built n8n automation workflows to trigger notification and reminder emails, reducing manual coordination across departments.",
   },
   {
     id: "experience-acma",
-    title: "Experience — Acma Computers Ltd, Data Analyst Intern",
+    title: "Experience - Acma Computers Ltd, Data Analyst Intern",
     content:
-      "Data Analyst Intern at Acma Computers Ltd, Mumbai, India. July 2024 – October 2024. Automated data cleaning workflows improving dataset preparation efficiency by 15%. Built Python + SQL dashboards for cross-functional infrastructure performance monitoring. Improved data-stream accuracy by 20% and contributed to a 10% reduction in system downtime.",
+      "Data Analyst Intern at Acma Computers Ltd, Mumbai, India. July 2024 to October 2024. Designed and maintained Python and SQL-based data ingestion and transformation pipelines. Diagnosed pipeline bottlenecks improving processing efficiency by 15% and contributing to a 10% reduction in system downtime. Implemented automated data validation and reconciliation logic, improving data accuracy by 20%.",
   },
   {
     id: "experience-cdac",
-    title: "Experience — C-DAC India, Software Developer Intern",
+    title: "Experience - C-DAC India, Software Developer Intern",
     content:
-      "Software Developer Intern at C-DAC India (Centre for Development of Advanced Computing), Mumbai, India. December 2023 – May 2024. Built a virtual science practical simulator using ReactJS, FlareJS, and Rive animations. Designed onboarding flows, interactive lab modules, and integrated quizzes to improve student learning outcomes at scale.",
+      "Software Developer Intern at C-DAC India (Centre for Development of Advanced Computing), Mumbai, India. December 2023 to May 2024. Architected and built a virtual science simulator using ReactJS and Rive for high-performance vector animations, hosted on AWS EC2. Launched on the national Vidyakash platform, scaling to serve 2M+ high school students across India.",
+  },
+  {
+    id: "experience-roi",
+    title: "Experience - ROI Institute India, Business Development Intern",
+    content:
+      "Business Development Intern at ROI Institute India, Mumbai. June 2023 to August 2023. Identified and qualified B2B leads for corporate training programs, building targeted outreach pipelines. Coordinated city-wise seminar launches and managed stakeholder communication across multiple cities in India.",
   },
   {
     id: "projects-overview",
-    title: "Projects — All Projects",
+    title: "Projects - All Projects",
     content:
-      "Yash has built 6 major projects: AetherMart (AI-powered e-commerce), CMIS (case management system, 2nd place competition winner), Data-Analyzer (automated EDA tool), Airline Management System (SQL + backend + dashboard), Virtual Science Simulator (ReactJS + Rive, built at C-DAC), and AI-Agent-Lab (LangChain/LangGraph multi-agent framework). All projects are on GitHub: github.com/candelatesla.",
+      "Yash has built 6 major projects: AetherMart (AI-powered e-commerce data platform on AWS), CMIS (TAMU campus engagement platform, 2nd place competition winner), Data-Analyzer (automated EDA tool in Python/Streamlit), Airline Management System (Java + SQL operations system), Virtual Science Simulator (ReactJS + Rive, built at C-DAC, 2M+ users), and AI-Agent-Lab (LangGraph/LangChain/CrewAI multi-agent framework). All projects are on GitHub: github.com/candelatesla.",
   },
   {
     id: "project-aethermart",
-    title: "Project — AetherMart",
+    title: "Project - AetherMart",
     content:
-      "AetherMart is a full-stack AI-powered e-commerce platform. Stack: React, Node.js, MongoDB, Python ML pipeline. Features: personalized AI product recommendations, real-time inventory analytics, and dashboards. Demonstrates end-to-end full-stack + data + AI integration.",
+      "AetherMart is an AWS-hosted e-commerce data platform integrating MariaDB Galera Cluster and NoSQL sources. Features AI-powered product discovery via vector embeddings and LLM-driven ranking through the Gemini API, automated ETL pipelines, and Tableau dashboards for stakeholders. Demonstrates end-to-end data engineering, AI integration, and cloud architecture.",
   },
   {
     id: "project-cmis",
-    title: "Project — CMIS (Case Management Information System)",
+    title: "Project - CMIS Engagement Platform",
     content:
-      "CMIS is a case management information system built for a competition — won 2nd place. Streamlines case tracking, assignment, and reporting workflows. Demonstrates systems design and data modeling skills.",
+      "CMIS is a full-stack campus management system built for Texas A&M, supporting 1,000+ students and faculty. Features AI-powered student-mentor matching, role-based access control (RBAC), automated workflows across 10+ functional modules, and event management. Won 2nd place at the CMIS Case Competition 2025 at Texas A&M.",
   },
   {
     id: "project-ai-agent-lab",
-    title: "Project — AI-Agent-Lab",
+    title: "Project - AI-Agent-Lab",
     content:
-      "AI-Agent-Lab is a multi-agent AI framework built with LangChain and LangGraph. Implements agentic orchestration, RAG pipelines, tool-use patterns, and memory modules. Directly applicable to production applied AI engineering roles.",
+      "AI-Agent-Lab is a multi-agent AI framework built with LangGraph, LangChain, and CrewAI. Implements RAG pipelines with vector databases, LLaMA-based models, and Groq integration for low-latency real-time inference. Demonstrates agentic orchestration, tool-use patterns, and production-style AI system design.",
   },
   {
     id: "research-xai",
-    title: "Research — XAI Healthcare: Diabetes Prediction",
+    title: "Research - XAI Healthcare: Diabetes Prediction",
     content:
-      "Paper title: 'Interpretable Machine Learning in Healthcare – An XAI Approach for Diabetes Prediction'. Presented at ICMAAI-25 (June 2025), published in IJTE (International Journal of Trend in Engineering). Explores explainable AI (SHAP, LIME) for diabetes prediction to improve model transparency and clinician trust in AI-assisted healthcare decision support. Link: https://www.ijteonline.in/assets/uploads/issue_pdf/1772469849.pdf",
+      "Paper title: 'Interpretable Machine Learning in Healthcare - An XAI Approach for Diabetes Prediction'. Presented at ICMAAI-25 (June 2025), published in IJTE (International Journal of Trend in Engineering). Built interpretable ML models using SHAP, LIME, ELI5, and PDP-based feature attribution to improve model transparency for diabetes prediction. Link: https://www.ijteonline.in/assets/uploads/issue_pdf/1772469849.pdf",
   },
   {
     id: "research-ar",
-    title: "Research — AR in Exposure Therapy (IEEE)",
+    title: "Research - AR in Exposure Therapy (IEEE)",
     content:
       "Paper title: 'Revolutionizing Anxiety Treatment: The Role of Augmented Reality in Exposure Therapy'. Published on IEEE Xplore, April 2025. Integrates augmented reality into CBT exposure therapy protocols to improve patient engagement, personalization, and treatment outcomes for anxiety disorders. IEEE publication link: https://ieeexplore.ieee.org/document/10960229",
   },
   {
     id: "research-yolo",
-    title: "Research — YOLO Object Detection Benchmarking (Scopus)",
+    title: "Research - YOLO Object Detection Benchmarking (Scopus)",
     content:
       "Paper title: 'Comparison of YOLO Models Object Detection from Parking Spot Images'. Published in Scopus-indexed KUEY journal, April 2024. Benchmarks YOLOv5, YOLOv7, YOLOv8 variants across precision, recall, F1-score, inference speed, and practical deployment usability for smart parking systems. Link: https://kuey.net/index.php/kuey/article/view/7025",
   },
@@ -75,25 +81,25 @@ export const profileDocs = [
     id: "skills",
     title: "Technical Skills",
     content:
-      "Languages: Python, SQL, JavaScript, TypeScript, Java, R. Frameworks & Libraries: React, Node.js, Express, FastAPI, Flask. AI/ML/Data: LangChain, LangGraph, scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, Groq API. Visualization: Tableau, Power BI, Matplotlib, Seaborn. Cloud & DevOps: AWS, GCP, Vercel, Docker, Git, GitHub Actions. Databases: PostgreSQL, MongoDB, MySQL, Redis. Tools: Jupyter, VS Code, JIRA, Figma. Certifications in cloud and data platforms.",
+      "Languages: Python, R, SQL, JavaScript, TypeScript, Java, C. Frameworks: React, Node.js, REST APIs. AI/ML/Data: LangChain, LangGraph, CrewAI, Scikit-learn, TensorFlow, OpenCV, YOLO, XAI, RAG, Agentic AI, Recommendation Systems, Vector Databases. Data Tools: Pandas, NumPy, Matplotlib, Tableau, Power BI, Grafana, JMP. Cloud: AWS, Google Cloud, MLOps. Databases: PostgreSQL, MySQL, MariaDB, MongoDB, NoSQL. Tools: Kafka, Flexsim, Hadoop, Git, JIRA. Certifications: AWS Certified AI Practitioner, Google Cloud Career Practitioner, n8n, AI for Project Managers.",
   },
   {
     id: "education",
     title: "Education",
     content:
-      "M.S. Management Information Systems (MIS) — Texas A&M University, College Station TX. GPA: 3.96/4.0. Expected May 2027. Focus: AI systems, data engineering, analytics. B.Tech Information Technology — University of Mumbai / DJ Sanghvi College of Engineering (DJSCOE), Mumbai India. CGPA: 9.11/10 (≈3.96/4.0). Graduated May 2025.",
+      "M.S. Management Information Systems (MIS) - Texas A&M University, College Station TX. GPA: 3.96/4.0. Expected May 2027. Focus: AI systems, data engineering, analytics. B.Tech Information Technology - University of Mumbai / DJ Sanghvi College of Engineering (DJSCOE), Mumbai India. CGPA: 9.11/10 (approx 3.96/4.0). Graduated May 2025.",
   },
   {
     id: "leadership",
     title: "Leadership & Extracurriculars",
     content:
-      "Event Coordinator at BITS TAMU (Business Information Technology Students Club), Texas A&M. Mentor & Marketing Head at CSI (Computer Society of India). Placement & Internship Coordinator at DJ Sanghvi College of Engineering — helped coordinate placements for 200+ students across companies including TCS, Infosys, and tech startups.",
+      "President at BITS TAMU (Business Information Technology Students Club), Texas A&M, August 2025 to present. Leads strategy, member engagement, speaker sessions, and industry partnerships. Mentor and Marketing Head at CSI (Computer Society of India) - led an 80+ member team, managed budget of 1,200,000 INR, secured 800,000 INR in sponsorships for large-scale tech events. Placement and Internship Coordinator at DJ Sanghvi College of Engineering - guided 600+ students through placement prep and coordinated campus drives with 125+ companies.",
   },
   {
     id: "awards",
     title: "Awards & Competitions",
     content:
-      "🏆 2nd Place — CMIS Case Competition (built case management system). 🥉 3rd Place — Google Labs Makeathon (AI/product innovation challenge).",
+      "2nd Place - CMIS Case Competition 2025 at Texas A&M University (December 2025). Built the CMIS Engagement Platform - an AI-powered campus system for student-mentor matching and case workflow collaboration. 3rd Place - Google Labs x Aggies-in-Tech Makeathon 2025 at Texas A&M (November 2025). Built an AI-assisted accessibility app converting study materials (audio, text, PDF, slides) into accessible learning formats using Google Labs tooling.",
   },
   {
     id: "contact",
@@ -105,7 +111,7 @@ export const profileDocs = [
     id: "why-hire",
     title: "Why Hire Yash / Recruiter Summary",
     content:
-      "Yash is an incoming Tesla Data Engineering Intern with a 3.96 GPA across two degrees, 3 peer-reviewed publications (IEEE, Scopus, ICMAAI), and 4 internship/job experiences spanning data engineering, full-stack development, and analytics. He has shipped production software at Texas A&M, automated data pipelines at Acma, built AI agent frameworks, and published research on XAI, AR, and computer vision. He's seeking full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, or Applied AI.",
+      "Yash is an incoming Tesla Data Engineering Intern with a 3.96 GPA across two degrees, 3 peer-reviewed publications (IEEE, Scopus, ICMAAI), and 5 professional experiences spanning data engineering, full-stack development, software development, and business development. He has shipped production software at Texas A&M, built data pipelines at Acma, deployed a simulator used by 2M+ students at C-DAC, built AI agent frameworks, and published research on XAI, AR, and computer vision. He is seeking full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, or Applied AI.",
   },
 ];
 
