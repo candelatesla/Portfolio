@@ -3,13 +3,13 @@ export const profileDocs = [
     id: "core-profile",
     title: "Yash Doshi - Overview",
     content:
-      "Yash Chetan Doshi is a Master of Science in Management Information Systems (MS MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is an incoming Data Engineering Intern at Tesla (May-Dec 2026). He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
+      "Yash Chetan Doshi is a Master of Science in Management Information Systems (MS MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is currently a Data Engineering Intern at Tesla, Palo Alto, CA (May 2026 - present). He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
   },
   {
     id: "experience-tesla",
     title: "Experience - Tesla, Data Engineering Intern",
     content:
-      "Incoming Data Engineering Intern at Tesla. Duration: May through December 2026, Palo Alto, CA. One of the most competitive tech internships globally - joining the data engineering org at Tesla.",
+      "Data Engineering Intern at Tesla, Palo Alto, CA. May 2026 to present. Current role. Building end-to-end streaming data pipelines with Python-based Kafka consumers, enforcing data validation, schema standardization, and quality checks across supplier APIs and downstream relational databases. Performing production data analysis using SQL and building Grafana dashboards to monitor key operational metrics including yield rate, Cpk, and machine-level cycle time. Developing computer vision and AI models for defect categorization on electronics assemblies. Applying PCA, correlation analysis, and significance testing for defect investigations using JMP and Python. Leading data pipeline implementations across contract manufacturers and driving data literacy within the organization.",
   },
   {
     id: "experience-tamu",
@@ -111,7 +111,7 @@ export const profileDocs = [
     id: "why-hire",
     title: "Why Hire Yash / Recruiter Summary",
     content:
-      "Yash is an incoming Tesla Data Engineering Intern with a 3.96 GPA across two degrees, 3 peer-reviewed publications (IEEE, Scopus, ICMAAI), and 5 professional experiences spanning data engineering, full-stack development, software development, and business development. He has shipped production software at Texas A&M, built data pipelines at Acma, deployed a simulator used by 2M+ students at C-DAC, built AI agent frameworks, and published research on XAI, AR, and computer vision. He is seeking full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, or Applied AI.",
+      "Yash is currently a Data Engineering Intern at Tesla, Palo Alto, building streaming data pipelines, computer vision models for defect categorization, and Grafana dashboards for manufacturing analytics. He holds a 3.96 GPA across two degrees, has 3 peer-reviewed publications (IEEE, Scopus, ICMAAI), and 5 professional experiences spanning data engineering, full-stack development, software development, and business development. He has shipped production software at Texas A&M, built data pipelines at Acma, deployed a simulator used by 2M+ students at C-DAC, and published research on XAI, AR, and computer vision. Seeking full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, or Applied AI.",
   },
 ];
 
