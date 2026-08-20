@@ -4,21 +4,21 @@ export const profileDocs = [
     title: "Yash Profile Snapshot",
     type: "profile",
     content:
-      "Yash Chetan Doshi is a graduate student engineer focused on AI, data, and full-stack systems. Open to internship roles in Data, AI, and Full-Stack Engineering.",
+      "Yash Chetan Doshi is a graduate student engineer focused on data engineering, software systems, and applied AI. Open to 2027 FTE roles in Data Engineering, Software Engineering, and Applied AI.",
   },
   {
     id: "experience-tamu",
     title: "Experience - Texas A&M Full Stack Developer",
     type: "experience",
     content:
-      "Current Full Stack Developer at Texas A&M University. Builds and maintains student-facing and internal platform features across frontend, backend APIs, and databases. Works closely with stakeholders for iterative delivery.",
+      "Full Stack Developer at Texas A&M University. Built and maintained full-stack applications for student and faculty workflows, developing backend logic, API integrations, and relational and MongoDB data models with role-based access controls. Automated workflows using Python, n8n, and Apps Script.",
   },
   {
     id: "experience-acma",
     title: "Experience - Data Analyst Intern",
     type: "experience",
     content:
-      "Data Analyst Intern at Acma Computers Ltd, Mumbai (Jul 2024 to Oct 2024). Automated data cleaning workflows, built Python plus SQL dashboards, and improved data quality/monitoring outcomes.",
+      "Data Analyst Intern at Acma Computers Ltd, Mumbai (Jul 2024 to Oct 2024). Automated data cleaning workflows, built Python plus SQL dashboards, improved data accuracy, and contributed to a 10% reduction in pipeline/monitoring-related downtime.",
   },
   {
     id: "experience-cdac",
@@ -32,7 +32,7 @@ export const profileDocs = [
     title: "Projects",
     type: "projects",
     content:
-      "Projects include AetherMart, CMIS Engagement Platform, Data-Analyzer, Airline-Management-System, Virtual Science Practical Simulator, and AI-Agent-Lab. Covers data, full-stack, and AI work.",
+      "Projects include AetherMart, CMIS Engagement Platform, Data-Analyzer, Airline-Management-System, Virtual Science Practical Simulator, and AI-Agent-Lab. Covers data engineering, software, and applied AI work.",
   },
   {
     id: "skills",

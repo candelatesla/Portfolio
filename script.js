@@ -271,9 +271,9 @@ const CHAT_API_ENDPOINTS = ["/api/chat"];
 const knowledgeBase = [
   {
     type: "experience",
-    title: "Tesla — Data Engineering Intern",
-    summary: "Data Engineering Intern at Tesla, May – Dec 2026 (Summer & Fall).",
-    details: "Joining Tesla as a Data Engineering Intern — details to follow.",
+    title: "Tesla — Data Engineer Intern",
+    summary: "Data Engineer Intern at Tesla, May 2026 – Present in Palo Alto, California.",
+    details: "Building real-time ingestion systems, manufacturing analytics, YOLO-based inspection workflows, and AI-enabled engineering tools.",
     source: "Website experience section",
     keywords: ["tesla", "data engineering", "intern", "2026"],
   },
@@ -336,7 +336,7 @@ const knowledgeBase = [
   {
     type: "projects",
     title: "Projects",
-    summary: "Core work across data, full-stack, and AI: AetherMart, CMIS, Data-Analyzer, Airline system, CDAC simulator, AI-Agent-Lab.",
+    summary: "Core work across data, software, and applied AI: AetherMart, CMIS, Data-Analyzer, Airline system, CDAC simulator, AI-Agent-Lab.",
     details: "Primary stack includes Python, SQL, React, Node.js, LangChain/LangGraph, and analytics tooling.",
     source: "Website projects + GitHub",
     keywords: ["projects", "github", "aethermart", "cmis", "ai-agent-lab", "data-analyzer"],
@@ -411,7 +411,7 @@ const answerFromKnowledge = (query) => {
   if (intent === "experience") return summarizeExperience();
   if (intent === "skills")     return summarizeSkills();
   if (intent === "hire")
-    return "Yash is an incoming Tesla intern and is exploring full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. He combines full-stack execution, data/AI implementation, and leadership experience across real delivered systems.";
+    return "Yash is a Data Engineer Intern at Tesla and is exploring 2027 FTE roles in Data Engineering, Software Engineering, and Applied AI. He combines production data systems work, backend/software execution, and AI implementation across real delivered systems.";
 
   const scored = knowledgeBase
     .map((item) => {

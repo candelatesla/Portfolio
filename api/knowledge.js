@@ -3,25 +3,25 @@ export const profileDocs = [
     id: "core-profile",
     title: "Yash Doshi - Overview",
     content:
-      "Yash Chetan Doshi is a Master of Science in Management Information Systems (MS MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is currently a Data Engineering Intern at Tesla, Palo Alto, CA (May 2026 - present). He is open to full-time roles starting Summer 2027 in Data Engineering, Data Science, Analytics, Software Development, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
+      "Yash Chetan Doshi is a Master of Science in Management Information Systems (MS MIS) student at Texas A&M University (GPA 3.96, graduating May 2027). He is currently a Data Engineer Intern at Tesla, Palo Alto, California (May 2026 - present). He is open to 2027 FTE roles in Data Engineering, Software Engineering, and Applied AI. Based in College Station, TX. Originally from Mumbai, India.",
   },
   {
     id: "experience-tesla",
-    title: "Experience - Tesla, Data Engineering Intern",
+    title: "Experience - Tesla, Data Engineer Intern",
     content:
-      "Data Engineering Intern at Tesla, Palo Alto, CA. May 2026 to present. Current role. Building end-to-end streaming data pipelines with Python-based Kafka consumers, enforcing data validation, schema standardization, and quality checks across supplier APIs and downstream relational databases. Performing production data analysis using SQL and building Grafana dashboards to monitor key operational metrics including yield rate, Cpk, and machine-level cycle time. Developing computer vision and AI models for defect categorization on electronics assemblies. Applying PCA, correlation analysis, and significance testing for defect investigations using JMP and Python. Leading data pipeline implementations across contract manufacturers and driving data literacy within the organization.",
+      "Data Engineer Intern at Tesla, Palo Alto, California. May 2026 to present. Building and maintaining real-time data ingestion systems using Python, Kafka, REST APIs, and SQL to process high-volume manufacturing data and image records across global production environments. Engineering lightweight Go-based ingestion and monitoring tooling with AWS S3 and Splunk, supporting continuous image transfer, system health monitoring, and production observability across connected factory equipment. Analyzing production data across PostgreSQL, MySQL, and ClickHouse and developing 15+ Grafana dashboards for operational analytics, including yield, Cpk, cycle time, EOL performance, and machine-level trends. Developing YOLO-based computer vision models for automated defect inspection, including image collection, dataset curation, labeling, training, and statistical root-cause analysis using Python and JMP. Building and deploying internal AI-enabled analytics tools grounded in engineering databases and documentation, including text-to-SQL, metric retrieval, and contextual image search for engineering users. Working directly with engineering and supplier teams on data schemas, software integration, deployment, troubleshooting, and production support across end-to-end data workflows.",
   },
   {
     id: "experience-tamu",
     title: "Experience - Texas A&M University, Full Stack Developer",
     content:
-      "Full Stack Developer at Texas A&M University, College Station, TX. January 2026 to May 2026. Developed and maintained full-stack web applications and a teacher-facing dashboard for student and faculty data management. Designed relational and NoSQL (MongoDB) databases. Built n8n automation workflows to trigger notification and reminder emails, reducing manual coordination across departments.",
+      "Full Stack Developer at Texas A&M University, College Station, TX. January 2026 to May 2026. Built and maintained full-stack applications for student and faculty workflows, developing backend logic, API integrations, and relational and MongoDB data models with role-based access controls. Automated application workflows using Python, n8n, and Apps Script, integrating notifications and administrative processes into production systems.",
   },
   {
     id: "experience-acma",
     title: "Experience - Acma Computers Ltd, Data Analyst Intern",
     content:
-      "Data Analyst Intern at Acma Computers Ltd, Mumbai, India. July 2024 to October 2024. Designed and maintained Python and SQL-based data ingestion and transformation pipelines. Diagnosed pipeline bottlenecks improving processing efficiency by 15% and contributing to a 10% reduction in system downtime. Implemented automated data validation and reconciliation logic, improving data accuracy by 20%.",
+      "Data Analyst Intern at Acma Computers Ltd, Mumbai, India. July 2024 to October 2024. Designed and maintained Python and SQL-based data ingestion and transformation pipelines. Diagnosed pipeline bottlenecks improving processing efficiency by 15% and contributing to a 10% reduction in pipeline/monitoring-related downtime. Implemented automated data validation and reconciliation logic, improving data accuracy by 20%.",
   },
   {
     id: "experience-cdac",
@@ -45,13 +45,13 @@ export const profileDocs = [
     id: "project-aethermart",
     title: "Project - AetherMart",
     content:
-      "AetherMart is an AWS-hosted e-commerce data platform integrating MariaDB Galera Cluster and NoSQL sources. Features AI-powered product discovery via vector embeddings and LLM-driven ranking through the Gemini API, automated ETL pipelines, and Tableau dashboards for stakeholders. Demonstrates end-to-end data engineering, AI integration, and cloud architecture.",
+      "AetherMart is a hybrid data and AI platform on AWS combining Python and SQL ETL, MariaDB and MongoDB, CDC-based synchronization, a highly available Galera cluster, vector search, and AI-powered product discovery.",
   },
   {
     id: "project-cmis",
     title: "Project - CMIS Engagement Platform",
     content:
-      "CMIS is a full-stack campus management system built for Texas A&M, supporting 1,000+ students and faculty. Features AI-powered student-mentor matching, role-based access control (RBAC), automated workflows across 10+ functional modules, and event management. Won 2nd place at the CMIS Case Competition 2025 at Texas A&M.",
+      "CMIS is a full-stack campus management system built for Texas A&M, supporting 1,000+ students and faculty. Features AI-powered student-mentor matching, role-based access control (RBAC), automated workflows across 10+ functional modules, and event management. Awarded 2nd Place Overall at the 2025 CMIS Case Competition.",
   },
   {
     id: "project-ai-agent-lab",
@@ -81,7 +81,7 @@ export const profileDocs = [
     id: "skills",
     title: "Technical Skills",
     content:
-      "Languages: Python, R, SQL, JavaScript, TypeScript, Java, C. Frameworks: React, Node.js, REST APIs. AI/ML/Data: LangChain, LangGraph, CrewAI, Scikit-learn, TensorFlow, OpenCV, YOLO, XAI, RAG, Agentic AI, Recommendation Systems, Vector Databases. Data Tools: Pandas, NumPy, Matplotlib, Tableau, Power BI, Grafana, JMP. Cloud: AWS, Google Cloud, MLOps. Databases: PostgreSQL, MySQL, MariaDB, MongoDB, NoSQL. Tools: Kafka, Flexsim, Hadoop, Git, JIRA. Certifications: AWS Certified AI Practitioner, Google Cloud Career Practitioner, n8n, AI for Project Managers.",
+      "Languages: Python, SQL, Go, JavaScript, TypeScript, Java, C/C++. Software and Cloud: REST APIs, Kafka, AWS, AWS S3, GCP, Git/GitHub, CI/CD, Splunk, React, Node.js, JIRA. Data: PostgreSQL, MySQL, ClickHouse, MariaDB, MongoDB, Pandas, NumPy, Grafana, Tableau, Power BI, JMP, Vector Databases. AI/ML: LLMs, RAG, Agentic AI, Model Context Protocol (MCP), Computer Vision, YOLO, LangGraph, LangChain, Scikit-learn, PyTorch, OpenCV. Certifications: AWS Certified AI Practitioner, Google Cloud Career Practitioner, n8n, AI for Project Managers.",
   },
   {
     id: "education",
@@ -111,7 +111,7 @@ export const profileDocs = [
     id: "why-hire",
     title: "Why Hire Yash / Recruiter Summary",
     content:
-      "Yash is currently a Data Engineering Intern at Tesla, Palo Alto, building streaming data pipelines, computer vision models for defect categorization, and Grafana dashboards for manufacturing analytics. He holds a 3.96 GPA across two degrees, has 3 peer-reviewed publications (IEEE, Scopus, ICMAAI), and 5 professional experiences spanning data engineering, full-stack development, software development, and business development. He has shipped production software at Texas A&M, built data pipelines at Acma, deployed a simulator used by 2M+ students at C-DAC, and published research on XAI, AR, and computer vision. Seeking full-time roles starting 2027 in Data Engineering, Data Science, Analytics, Software Development, or Applied AI.",
+      "Yash is currently a Data Engineer Intern at Tesla, Palo Alto, building streaming data pipelines, computer vision models for defect categorization, and Grafana dashboards for manufacturing analytics. He holds a 3.96 GPA across two degrees, has 3 peer-reviewed publications (IEEE, Scopus, ICMAAI), and professional experience spanning data engineering, full-stack development, software development, and analytics. He has shipped production software at Texas A&M, built data pipelines at Acma, deployed a simulator used by 2M+ students at C-DAC, and published research on XAI, AR, and computer vision. Seeking 2027 FTE roles in Data Engineering, Software Engineering, or Applied AI.",
   },
 ];
 
